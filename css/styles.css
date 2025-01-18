@@ -11026,15 +11026,33 @@ html {
   background-color: unset;
 }
 
+
+/* تعریف انیمیشن */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0; /* محو بودن تصویر */
+    transform: translateX(-400px); /* شروع از سمت چپ */
+  }
+  100% {
+    opacity: 1; /* شفافیت کامل */
+    transform: translateX(0); /* موقعیت نهایی */
+  }
+}
+
+
 .masthead .masthead-avatar {
   width: 200px; /* تنظیم اندازه تصویر */
-  height: auto;
+  height: auto; /* تنظیم ارتفاع تصویر */
   clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%); /* ایجاد شکل غیرمربع */
-  margin-left: auto; /* حرکت تصویر به سمت راست */
-  margin-right: 0;
-  transform: translateX(20px) !important; /* تغییر دقیق موقعیت */
-  object-fit: cover; /* مدیریت نمایش تصویر */
+  margin-left: auto; /* حرکت به سمت راست */
+  margin-right: 50px;
+  /*transform: translateX(20px) !important;*/ /* تغییر موقعیت افقی */
+  object-fit: cover; /* مدیریت تناسب تصویر */
+  position: relative; /* اطمینان از تأثیرپذیری transform */
+  /* تنظیمات انیمیشن */
+  animation: fadeInLeft 1.5s ease-in forwards; /* زمان و افکت انیمیشن */
 }
+
 
 .masthead .container {
   display: flex;
@@ -11058,6 +11076,17 @@ html {
   font-size: 1.2rem; /* تنظیم اندازه توضیحات */
   margin-top: 10px; /* فاصله از عنوان اصلی */
   color: #f0f0f0; /* رنگ دلخواه برای متن توضیحات */
+}
+
+.masthead-heading-container {
+  background: rgba(0, 0, 0, 0.5); /* مستطیل نیمه‌شفاف */
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.masthead-heading {
+  color: white;
 }
 
 @media (min-width: 992px) {
