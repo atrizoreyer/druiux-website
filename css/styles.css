@@ -11081,7 +11081,7 @@ html {
   border-radius: 20%; /* گرد کردن تصویر */
   opacity: 0;
   z-index: 2; /* لایه بالاتر */
-  animation: fadeInOriginal 3s ease 2s forwards; /* تأخیر انیمیشن */
+  animation: fadeInOriginal 4s ease 1.7s forwards; /* تأخیر انیمیشن */
 }
 /* تصویر کارتونی */
 .masthead-avatar-cartoon {
