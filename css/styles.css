@@ -384,7 +384,9 @@ button,
 [type=button],
 [type=reset],
 [type=submit] {
-  -webkit-appearance: button;
+  -webkit-appearance: button; /* برای مرورگرهای مبتنی بر WebKit (مثل Safari و قدیمی‌های Chrome) */
+  -moz-appearance: button; /* برای مرورگرهای مبتنی بر Gecko (مثل Firefox قدیمی) */
+  appearance: button; /* خاصیت استاندارد برای همه مرورگرها */
 }
 button:not(:disabled),
 [type=button]:not(:disabled),
@@ -442,7 +444,9 @@ legend + * {
 
 [type=search] {
   outline-offset: -2px;
-  -webkit-appearance: textfield;
+  -webkit-appearance: textfield; /* برای مرورگرهای WebKit */
+  -moz-appearance: textfield; /* برای مرورگرهای Gecko (مثل Firefox قدیمی) */
+  appearance: textfield; /* خاصیت استاندارد برای مرورگرهای مدرن */
 }
 
 /* rtl:raw:
@@ -463,7 +467,9 @@ legend + * {
 
 ::file-selector-button {
   font: inherit;
-  -webkit-appearance: button;
+  -webkit-appearance: button; /* برای مرورگرهای WebKit */
+  -moz-appearance: button; /* برای مرورگرهای Gecko (مثل Firefox) */
+  appearance: button; /* خاصیت استاندارد برای مرورگرهای مدرن */
 }
 
 output {
