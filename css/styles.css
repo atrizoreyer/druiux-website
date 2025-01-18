@@ -11026,16 +11026,38 @@ html {
   background-color: unset;
 }
 
+.masthead .masthead-avatar {
+  width: 200px; /* تنظیم اندازه تصویر */
+  height: auto;
+  clip-path: polygon(20% 0%, 100% 0%, 80% 100%, 0% 100%); /* ایجاد شکل غیرمربع */
+  margin-left: auto; /* حرکت تصویر به سمت راست */
+  margin-right: 0;
+  transform: translateX(20px) !important; /* تغییر دقیق موقعیت */
+  object-fit: cover; /* مدیریت نمایش تصویر */
+}
+
+.masthead .container {
+  display: flex;
+  flex-direction: row; /* ترتیب افقی عناصر */
+  align-items: center; /* تنظیم عمودی */
+  justify-content: space-between; /* فاصله بین متن و تصویر */
+  text-align: left; /* متن به سمت چپ */
+}
+
+.masthead .masthead-heading,
+.masthead .masthead-subheading {
+  max-width: 60%; /* عرض محدود برای متن */
+}
 
 .masthead .masthead-heading {
-  font-size: 2.75rem;
-  line-height: 2.75rem;
+  font-size: 3rem; /* تنظیم اندازه عنوان اصلی */
+  line-height: 1.2; /* بهبود فاصله بین خطوط */
 }
+
 .masthead .masthead-subheading {
-  font-size: 1.25rem;
-}
-.masthead .masthead-avatar {
-  width: 15rem;
+  font-size: 1.2rem; /* تنظیم اندازه توضیحات */
+  margin-top: 10px; /* فاصله از عنوان اصلی */
+  color: #f0f0f0; /* رنگ دلخواه برای متن توضیحات */
 }
 
 @media (min-width: 992px) {
