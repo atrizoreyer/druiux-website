@@ -11229,6 +11229,10 @@ html, body {
     font-size: 4rem;
     line-height: 3.5rem;
   }
+  .masthead-heading-container {
+    padding: 0 15px; /* اضافه کردن فاصله از طرفین */
+    box-sizing: border-box; /* اطمینان از شمول padding در اندازه‌گیری */
+  }
   .masthead .masthead-subheading {
     font-size: 1.5rem;
   }
