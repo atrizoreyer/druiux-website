@@ -11054,6 +11054,88 @@ html {
 }
 
 
+/* تنظیمات کانتینر تصاویر */
+.masthead-avatar-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 1rem; /* فاصله از متن */
+}
+
+/* تصویر کارتونی */
+.masthead-avatar-cartoon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20%; /* گرد کردن تصویر */
+  opacity: 0;
+  transform: translateX(-300px); /* شروع خارج از صفحه */
+  animation: move 2s ease forwards, fade 1s ease 1s forwards;
+}
+
+/* تصویر اصلی */
+.masthead-avatar-original {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20%; /* گرد کردن تصویر */
+  opacity: 0;
+  animation: fadeInOriginal 2s ease 2.5s forwards; /* تأخیر انیمیشن */
+}
+
+/* انیمیشن حرکت کارتونی */
+@keyframes move {
+  0% {
+    transform: translateX(-300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+}
+
+/* انیمیشن ظاهر شدن تصویر اصلی */
+@keyframes fadeInOriginal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+/* تنظیمات متن هدر */
+.masthead-heading-container {
+  background-color: rgba(0, 0, 0, 0.5); /* پس‌زمینه شفاف برای خوانایی بهتر */
+  padding: 10px 20px; /* فاصله داخلی */
+  border-radius: 10px; /* گوشه‌های گرد */
+  display: inline-block; /* عرض متن محدود به محتوای آن */
+}
+
+
+
+
+
 .masthead .container {
   display: flex;
   flex-direction: row; /* ترتیب افقی عناصر */
@@ -11088,6 +11170,12 @@ html {
 .masthead-heading {
   color: white;
 }
+
+
+
+
+
+
 
 @media (min-width: 992px) {
   .masthead {
