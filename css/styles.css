@@ -11211,10 +11211,14 @@ html, body {
 }
 
 .masthead-heading {
-  color: white;
+  font-size: 3rem;
+  background: linear-gradient(to bottom, white, yellow); /* گرادیانت از سفید به زرد */
+  -webkit-background-clip: text; /* برای مرورگرهایی که از WebKit استفاده می‌کنند */
+  background-clip: text; /* ویژگی استاندارد */
+  color: transparent; /* شفاف کردن رنگ متن تا فقط گرادیانت نمایش داده شود */
+  padding: 10px; /* برای ایجاد فاصله بین متن و پس‌زمینه */
+  color: rgba(255, 255, 255, 0.7);
 }
-
-
 
 
 
