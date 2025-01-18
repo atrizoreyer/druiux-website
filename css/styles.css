@@ -10889,6 +10889,8 @@ html {
   font-size: 1.25rem;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to bottom, rgba(34, 47, 62, 0.9), rgba(34, 47, 62, 0.9));
+  transition: background 0.3s ease, padding-top 0.3s, padding-bottom 0.3s;
 }
 
 #mainNav {
@@ -10896,25 +10898,44 @@ html {
   padding-bottom: 1rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
+
+  /* اضافه کردن گرادیان به پس‌زمینه */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(34, 47, 62, 0.9));
+  transition: background 0.3s ease, padding-top 0.3s, padding-bottom 0.3s;
 }
+
+#mainNav.navbar-shrink {
+  /* تغییر پس‌زمینه هنگام اسکرول */
+  background-color: rgba(34, 47, 62, 0.9);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  transition: background-color 0.3s ease, padding-top 0.3s, padding-bottom 0.3s;
+}
+
 #mainNav .navbar-brand {
   color: #fff;
 }
+
 #mainNav .navbar-nav {
   margin-top: 1rem;
 }
+
 #mainNav .navbar-nav li.nav-item a.nav-link {
   color: #fff;
 }
+
 #mainNav .navbar-nav li.nav-item a.nav-link:hover {
   color: #1abc9c;
 }
+
 #mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
   color: #fff;
 }
+
 #mainNav .navbar-nav li.nav-item a.nav-link.active {
   color: #1abc9c;
 }
+
 #mainNav .navbar-toggler {
   font-size: 80%;
   padding: 0.8rem;
@@ -10922,31 +10943,43 @@ html {
 
 @media (min-width: 992px) {
   #mainNav {
+    background: linear-gradient(to bottom, rgba(34, 47, 62, 0.9), rgba(34, 47, 62, 0.9)); /* گرادیان از بالا به پایین */
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    transition: padding-top 0.3s, padding-bottom 0.3s;
+    transition: padding-top 0.3s, padding-bottom 0.3s, background 0.3s;
+  }
+  #mainNav {
+   background: #1abc9c;
+    box-shadow: none; /* حذف سایه احتمالی */
+    transition: background-color 0.3s ease; /* افکت تغییر پس‌زمینه */
   }
   #mainNav .navbar-brand {
     font-size: 1.75em;
-    transition: font-size 0.3s;
+    transition: font-size 0.3s ease;
+    color: #fff  /*!important*/;
+    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);*/
   }
   #mainNav .navbar-nav {
     margin-top: 0;
   }
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-    color: #fff;
+    color: rgba(34, 47, 62, 0.9);;
     background: #1abc9c;
   }
-  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus, #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active,
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus,
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
     color: #fff;
     background: #1abc9c;
   }
   #mainNav.navbar-shrink {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    background-color: rgba(34, 47, 62, 0.9); /* رنگ طوسی تیره با ته‌مایه سبز */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* سایه برای جذابیت */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.5em;
+    color: #ffffff !important; /* رنگ متن هنگام اسکرول */
   }
 }
 .form-floating input.form-control,
@@ -10971,7 +11004,7 @@ html {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
   /* اضافه کردن تصویر پس‌زمینه */
-  background-image: url('assets/img/mountain.jpg'); /* مسیر تصویر */
+  background-image: url('../assets/img/desk.jpg'); /* مسیر تصویر */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10979,6 +11012,21 @@ html {
   /* حذف رنگ قبلی */
   background-color: unset;
 }
+
+.masthead-portfolio {
+  padding-top: calc(6rem + 74px);
+  padding-bottom: 6rem;
+  /* اضافه کردن تصویر پس‌زمینه */
+  background-image: url('../assets/img/sketch.jpg'); /* مسیر تصویر */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* حذف رنگ قبلی */
+  background-color: unset;
+}
+
+
 .masthead .masthead-heading {
   font-size: 2.75rem;
   line-height: 2.75rem;

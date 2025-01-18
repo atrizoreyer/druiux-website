@@ -59,7 +59,7 @@
             </div>
         </header>
         <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
+        <section class="page-section portfolio masthead-portfolio" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
@@ -77,7 +77,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cabin.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/Home dark.jpg" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 2-->
@@ -86,7 +86,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/cake.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/home.png" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 3-->
@@ -95,7 +95,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/circus.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/p1.jpg" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 4-->
@@ -104,7 +104,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/game.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/p2.jpg" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 5-->
@@ -113,7 +113,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/safe.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/p3.jpg" alt="..." />
                         </div>
                     </div>
                     <!-- Portfolio Item 6-->
@@ -122,7 +122,7 @@
                             <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
                                 <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
                             </div>
-                            <img class="img-fluid" src="assets/img/portfolio/submarine.png" alt="..." />
+                            <img class="img-fluid" src="assets/img/portfolio/p5.jpg" alt="..." />
                         </div>
                     </div>
                 </div>
@@ -463,5 +463,16 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script>
+            window.addEventListener('scroll', () => {
+              const navbar = document.querySelector('#mainNav');
+              if (window.scrollY > 100) {
+                navbar.classList.add('navbar-shrink');
+              } else {
+                navbar.classList.remove('navbar-shrink');
+              }
+            });
+          </script>
+          
     </body>
 </html>
