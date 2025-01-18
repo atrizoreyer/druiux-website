@@ -11062,19 +11062,7 @@ html {
   margin-bottom: 1rem; /* فاصله از متن */
 }
 
-/* تصویر کارتونی */
-.masthead-avatar-cartoon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 20%; /* گرد کردن تصویر */
-  opacity: 0;
-  transform: translateX(-300px); /* شروع خارج از صفحه */
-  animation: move 2s ease forwards, fade 1s ease 1s forwards;
-}
+
 
 /* تصویر اصلی */
 .masthead-avatar-original {
@@ -11086,7 +11074,33 @@ html {
   object-fit: cover;
   border-radius: 20%; /* گرد کردن تصویر */
   opacity: 0;
-  animation: fadeInOriginal 2s ease 2.5s forwards; /* تأخیر انیمیشن */
+  z-index: 2; /* لایه بالاتر */
+  animation: fadeInOriginal 3s ease 3.5s forwards; /* تأخیر انیمیشن */
+}
+/* تصویر کارتونی */
+.masthead-avatar-cartoon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20%; /* گرد کردن تصویر */
+  opacity: 0;
+  transform: translateX(-300px); /* شروع خارج از صفحه */
+  z-index: 1; /* لایه پایین‌تر */
+  animation: move 2s ease forwards, fade 1s ease 1s forwards;
+}
+
+
+/* انیمیشن ظاهر شدن تصویر اصلی */
+@keyframes fadeInOriginal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* انیمیشن حرکت کارتونی */
@@ -11107,17 +11121,7 @@ html {
     opacity: 1;
   }
 }
-}
 
-/* انیمیشن ظاهر شدن تصویر اصلی */
-@keyframes fadeInOriginal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
 
 
 
