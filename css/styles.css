@@ -99,7 +99,8 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: transparent !important;
+  /*background-color: var(--bs-body-bg);*/
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -8133,7 +8134,7 @@ textarea.form-control-lg {
 
 .bg-primary {
   --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;
+  background-color: transparent; /*rgba(var(--bs-primary-rgb), var(--bs-bg-opacity)) !important;*/
 }
 
 .bg-secondary {
@@ -11006,17 +11007,49 @@ html {
   color: #6c757d;
 }
 
+
+
+
+
+.parallax-section {
+  background-image: url('../assets/img/CN.jpg'); /* مسیر تصویر */
+  background-attachment: fixed; /* ثابت کردن تصویر برای افکت پارالاکس */
+  background-size: cover; /* تطبیق تصویر با سایز بخش */
+  background-repeat: no-repeat; /* حذف تکرار تصویر */
+  height: 100vh; /* ارتفاع کل صفحه یا بخش */
+}
+
+/* Parallax Background */
+.parallax-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-image: url('../assets/img/CN.jpg');*/ /* مسیر تصویر بک‌گراند */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* در پشت محتوا */
+  transform: translateY(0);
+  transition: transform 0.2s linear;
+}
+
+html, body {
+  background-color: transparent; /* یا مقدار دلخواه */
+}
+
+
+
+/* Masthead Section */
 .masthead {
   padding-top: calc(6rem + 74px);
   padding-bottom: 6rem;
-  /* اضافه کردن تصویر پس‌زمینه */
-  background-image: url('../assets/img/CN.jpg'); /* مسیر تصویر */
+ background-image: url('../assets/img/CN.jpg'); /* مسیر تصویر */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* حذف رنگ قبلی */
-  background-color: unset;
+ /* background-attachment: fixed; /* برای پارالاکس */
 }
 
 .masthead-portfolio {
@@ -11249,3 +11282,4 @@ html {
 .copyright {
   background-color: #1a252f;
 }
+

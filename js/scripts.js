@@ -52,3 +52,24 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
 });
+
+
+
+/* انیمیشن بکگراند هنگام اسکرول 
+window.addEventListener('scroll', () => {
+    const parallaxBackground = document.querySelector('.parallax-background');
+    const scrollPosition = window.scrollY;
+
+    // حرکت بک‌گراند به نسبت اسکرول
+    if (parallaxBackground) {
+        parallaxBackground.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+    }
+});*/
+
+document.addEventListener("scroll", function () {
+    const masthead = document.querySelector(".masthead");
+    const scrollPosition = window.scrollY;
+    
+    // تغییر موقعیت پس‌زمینه بر اساس اسکرول
+    masthead.style.backgroundPosition = `center ${scrollPosition * 0.3}px`; // سرعت حرکت (0.5) قابل تنظیم است
+  });
