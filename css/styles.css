@@ -11189,7 +11189,7 @@ html, body {
 
 .masthead .masthead-heading,
 .masthead .masthead-subheading {
-  max-width: 60%; /* عرض محدود برای متن */
+  max-width: 80%; /* عرض محدود برای متن */
 }
 
 .masthead .masthead-heading {
@@ -11217,7 +11217,7 @@ html, body {
   background-clip: text; /* ویژگی استاندارد */
   color: transparent; /* شفاف کردن رنگ متن تا فقط گرادیانت نمایش داده شود */
   padding: 10px; /* برای ایجاد فاصله بین متن و پس‌زمینه */
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 1);
 }
 
 
