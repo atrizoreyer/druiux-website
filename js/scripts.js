@@ -73,3 +73,11 @@ document.addEventListener("scroll", function () {
     // تغییر موقعیت پس‌زمینه بر اساس اسکرول
     masthead.style.backgroundPosition = `center ${scrollPosition * 0.3}px`; // سرعت حرکت (0.5) قابل تنظیم است
   });
+
+  document.addEventListener("scroll", function () {
+    const masthead = document.querySelector(".masthead-portfolio");
+    const scrollPosition = window.scrollY;
+    
+    // تغییر موقعیت پس‌زمینه بر اساس اسکرول
+    masthead.style.backgroundPosition = `center ${scrollPosition * -0.2}px`; // سرعت حرکت (0.5) قابل تنظیم است
+  });

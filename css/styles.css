@@ -11053,11 +11053,11 @@ html, body {
 }
 
 .masthead-portfolio {
-  padding-top: calc(6rem + 74px);
+  padding-top: calc(-1rem + 1px);
   padding-bottom: 6rem;
   /* اضافه کردن تصویر پس‌زمینه */
-  background-image: url('../assets/img/mountain.jpg'); /* مسیر تصویر */
-  background-size: cover;
+  background-image: url('../assets/img/fence.jpg'); /* مسیر تصویر */
+  /*background-size: cover;*/
   background-position: center;
   background-repeat: no-repeat;
 
