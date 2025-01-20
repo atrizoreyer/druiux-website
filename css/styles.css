@@ -11058,7 +11058,7 @@ html, body {
   padding-top: calc(-1rem + 1px);
   padding-bottom: 6rem;
   /* اضافه کردن تصویر پس‌زمینه */
-  background-image: url('../assets/img/fence.jpg'); /* مسیر تصویر */
+  background-image: url('../assets/img/desktop.jpg'); /* مسیر تصویر */
   /*background-size: cover;*/
   background-position: center;
   background-repeat: no-repeat;
@@ -11410,7 +11410,7 @@ html, body {
 @media (max-width: 768px) {
   .park-content {
     top: 50px; /* فاصله بیشتر از سکشن بالا */
-    padding: 10px; /* فاصله داخلی */
+    padding: 20px 15px; /* فاصله کمتر از چپ و راست در موبایل */
     margin-bottom: 50px; /* فاصله بیشتر از پایین */
   }
 
