@@ -8046,10 +8046,10 @@ textarea.form-control-lg {
   --bs-text-opacity: 1;
   color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
 }
-
+/* رنگ portfolio */
 .text-secondary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+  color: yellow !important;
 }
 
 .text-success {
@@ -11058,13 +11058,13 @@ html, body {
   padding-top: calc(-1rem + 1px);
   padding-bottom: 6rem;
   /* اضافه کردن تصویر پس‌زمینه */
-  background-image: url('../assets/img/desktop.jpg'); /* مسیر تصویر */
+  /*background-image: url('../assets/img/desktop.jpg'); *//* مسیر تصویر */
   /*background-size: cover;*/
-  background-position: center;
-  background-repeat: no-repeat;
+ /* background-position: center;*/
+ /* background-repeat: no-repeat;*/
 
   /* حذف رنگ قبلی */
-  background-color: unset;
+  background-color: #1a1a1a;
 }
 
 
@@ -11243,6 +11243,13 @@ html, body {
     font-size: 1.5rem;
   }
 }
+
+
+
+
+
+
+
 .portfolio .portfolio-item {
   cursor: pointer;
   position: relative;
@@ -11250,6 +11257,7 @@ html, body {
   max-width: 25rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  
 }
 .portfolio .portfolio-item .portfolio-item-caption {
   position: absolute;
@@ -11258,6 +11266,7 @@ html, body {
   transition: all 0.2s ease-in-out;
   opacity: 0;
   background-color: rgba(26, 188, 156, 0.9);
+  
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
@@ -11285,9 +11294,10 @@ html, body {
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #2c3e50;
+  background-color: #1a1a1a;
   color: #fff;
 }
+
 
 .copyright {
   background-color: #1a252f;
@@ -11366,10 +11376,13 @@ html, body {
 .park-container {
   position: relative;
   background-image: url('../assets/img/walk park.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 200vh;
+  background-size: auto 100%;
+  background-position: center top;
+  background-repeat: no-repeat; /* جلوگیری از تکرار تصویر */
+  background-color: #333; /* رنگ نزدیک به بک‌گراند تصویر */
+
+ /* background-attachment: fixed;*/
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11392,7 +11405,7 @@ html, body {
   display: inline; /* جلوگیری از ایجاد پس‌زمینه مستطیلی */
   background: rgba(0, 0, 0, 0.6); /* تیره کردن پشت متن */
   border-radius: 5px; /* گرد کردن گوشه‌های هایلایت */
-  line-height: 1.6;
+  line-height: 2;
   padding: 5px 10px; /* فاصله داخلی برای خواناتر شدن متن */
 }
 
@@ -11421,6 +11434,158 @@ html, body {
   .park-content p {
     font-size: 1.25rem; /* کوچک‌تر کردن متن پاراگراف */
   }
+}
+
+/* استایل برای موبایل */
+@media (max-width: 768px) {
+  .park-container {
+    background-image: url('../assets/img/walk park - Copy.jpg'); /* تصویر برای موبایل */
+   /* background-attachment: scroll; */ /* برای جلوگیری از مشکلات در موبایل */
+    background-size: auto 100%; /* اندازه مناسب تصویر */
+    background-position: center top; /* موقعیت مناسب تصویر */
+  }
+}
+
+
+
+
+
+
+
+
+/* experiences Section */
+.experiences-container {
+
+  background-color: #333; 
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.experiences-content {
+  position: sticky;
+  top: 20%;
+  text-align: left;
+  color: #fff;
+  z-index: 2;
+  padding: 20px;
+}
+
+/* استایل برای موبایل */
+@media (max-width: 768px) {
+  .experiences-container {
+   /* background-image: url('../assets/img/walk park - Copy.jpg');*/ /* تصویر برای موبایل */
+   /* background-attachment: scroll; */ /* برای جلوگیری از مشکلات در موبایل */
+    background-size: auto 100%; /* اندازه مناسب تصویر */
+    background-position: center top; /* موقعیت مناسب تصویر */
+  }
+}
+
+
+
+
+
+
+
+.skills-section {
+  background-image: url('../assets/img/mountain.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #f4f4f4;
+  padding: 50px;
+  text-align: center;
+}
+
+.skills-category {
+  margin-bottom: 40px;
+}
+
+.skills-category h3 {
+  font-size: 2rem;
+  color: #333;
+}
+
+.skills-category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.skills-category li {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+/* Thank You Section */
+/* بخش اصلی سکشن تشکر */
+.thank-you-section {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #1a1a1a; /* رنگ پس‌زمینه تیره */
+  color: #fff; /* رنگ متن سفید */
+}
+
+/* استایل برای عنوان h2 (با نور و پس‌زمینه روشن که با hover تغییر می‌کند) */
+.thank-you-section h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease; /* حرکت نرم هنگام hover */
+}
+
+/* افکت پس‌زمینه روشن که به صورت دائمی روشن خاموش می‌شود */
+.thank-you-section h2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15); /* نور کمرنگ و محو */
+  z-index: -1;
+  transform: scale(1.2);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* افکت روشن شدن و تغییر سایز پس‌زمینه روی hover */
+.thank-you-section h2:hover::before {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+/* افکت بونس برای h2 */
+.thank-you-section h2:hover {
+  transform: translateY(-5px);
+}
+
+/* استایل برای پاراگراف (p) */
+.thank-you-section p {
+  font-size: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8); /* رنگ سفید محو */
+}
+
+/* رنگ آخرین جمله به نارنجی یا قرمز (مورد علاقه شما) */
+.thank-you-section .last-sentence {
+  color: orangered; /* رنگ قرمز یا نارنجی روشن */
+  font-weight: bold;
 }
 
 

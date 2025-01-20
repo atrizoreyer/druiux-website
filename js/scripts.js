@@ -74,6 +74,8 @@ document.addEventListener("scroll", function () {
     masthead.style.backgroundPosition = `center ${scrollPosition * 0.3}px`; // سرعت حرکت (0.5) قابل تنظیم است
   });
 
+
+
   document.addEventListener("scroll", function () {
     const masthead = document.querySelector(".masthead-portfolio");
     const scrollPosition = window.scrollY;
@@ -81,6 +83,12 @@ document.addEventListener("scroll", function () {
     // تغییر موقعیت پس‌زمینه بر اساس اسکرول
     masthead.style.backgroundPosition = `center ${scrollPosition * -0.08}px`; // سرعت حرکت (0.5) قابل تنظیم است
   });
+
+
+
+
+
+
 
 
 
@@ -170,6 +178,7 @@ window.addEventListener('scroll', () => {
         const maxScale = 1.3; // حداکثر مقدار زوم
         const scale = 1 + scrollPercentage * (maxScale - 1);
         parkSection.style.backgroundSize = `${scale * 100}% ${scale * 100}%`;
+        parkSection.style.backgroundPosition = 'center top';
 
         // محو شدن متن (اختیاری)
         parkContent.style.opacity = 1 - scrollPercentage * 0; // متن محو نمی‌شود
