@@ -103,6 +103,7 @@ body {
   /*background-color: var(--bs-body-bg);*/
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
 }
 
 hr {
@@ -11291,4 +11292,135 @@ html, body {
 .copyright {
   background-color: #1a252f;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Elevator Section */
+.elevator-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw; /* عرض صفحه به طور کامل */
+  background-image: url('../assets/img/cabin elevator.jpg'); /* مسیر تصویر را جایگزین کنید */
+  background-size: cover; /* این باعث می‌شود که تصویر به طور کامل پس‌زمینه را پر کند */
+  background-position: center; /* تصویر در وسط قرار می‌گیرد */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.elevator-doors {
+  position: fixed; /* یا absolute */
+  top: 0;
+  left: 0;
+  width: 100vw; /* عرض به اندازه کل صفحه */
+  height: 100vh; /* ارتفاع به اندازه کل صفحه */
+  display: flex;
+  justify-content: space-between;
+}
+
+.door {
+  position: absolute;
+  height: 100%;
+  width: 50%; /* عرض درها */
+  object-fit: cover;
+  transition: transform 1s ease-in-out;
+}
+
+.left-door {
+  left: 0;
+  transform: translateX(0);
+}
+
+.right-door {
+  right: 0;
+  transform: translateX(0);
+}
+
+.elevator-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  opacity: 1;
+  transition: opacity 3s ease-in-out; /* انیمیشن محو شدن */
+  transition-delay: 5s; /* تأخیر 2 ثانیه‌ای قبل از شروع انیمیشن */
+
+}
+
+/* Park Section */
+.park-container {
+  position: relative;
+  background-image: url('../assets/img/park.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 200vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.park-content {
+  position: sticky;
+  top: 20%;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  padding: 20px;
+}
+
+.park-content h2, 
+.park-content p {
+  margin: 0;
+  padding: 10px;
+  display: inline; /* جلوگیری از ایجاد پس‌زمینه مستطیلی */
+  background: rgba(0, 0, 0, 0.6); /* تیره کردن پشت متن */
+  border-radius: 5px; /* گرد کردن گوشه‌های هایلایت */
+  line-height: 1.6;
+  padding: 5px 10px; /* فاصله داخلی برای خواناتر شدن متن */
+}
+
+.park-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.park-content p {
+  font-size: 1.75rem;
+  max-width: 700px;
+}
+
+/* استایل برای موبایل */
+@media (max-width: 768px) {
+  .park-content {
+    top: 50px; /* فاصله بیشتر از سکشن بالا */
+    padding: 10px; /* فاصله داخلی */
+    margin-bottom: 50px; /* فاصله بیشتر از پایین */
+  }
+
+  .park-content h2 {
+    font-size: 2.5rem; /* کوچک‌تر کردن متن عنوان */
+  }
+
+  .park-content p {
+    font-size: 1.25rem; /* کوچک‌تر کردن متن پاراگراف */
+  }
+}
+
 

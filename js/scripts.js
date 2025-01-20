@@ -79,5 +79,99 @@ document.addEventListener("scroll", function () {
     const scrollPosition = window.scrollY;
     
     // تغییر موقعیت پس‌زمینه بر اساس اسکرول
-    masthead.style.backgroundPosition = `center ${scrollPosition * -0.2}px`; // سرعت حرکت (0.5) قابل تنظیم است
+    masthead.style.backgroundPosition = `center ${scrollPosition * -0.08}px`; // سرعت حرکت (0.5) قابل تنظیم است
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+  window.addEventListener('scroll', () => {
+    const elevatorSection = document.querySelector('.elevator-container');
+    const leftDoor = document.querySelector('.left-door');
+    const rightDoor = document.querySelector('.right-door');
+    const elevatorText = document.querySelector('.elevator-text');
+    const parkSection = document.querySelector('.park-container');
+
+    const elevatorRect = elevatorSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // بررسی اینکه بخش آسانسور در دید کاربر است
+    if (elevatorRect.top < windowHeight && elevatorRect.bottom > 0) {
+        // محاسبه درصد اسکرول
+        const scrollPercentage = Math.min(
+            Math.max((windowHeight - elevatorRect.top) / (windowHeight * 0.8), 0),
+            1
+        );
+
+        // حرکت درها
+        if (scrollPercentage < 0.5) {
+            // باز بودن درها در ابتدا
+            leftDoor.style.transform = `translateX(0)`;
+            rightDoor.style.transform = `translateX(0)`;
+        } else if (scrollPercentage < 1) {
+            // بسته شدن درها در میانه
+            leftDoor.style.transform = `translateX(-100%)`;
+            rightDoor.style.transform = `translateX(100%)`;
+        } else {
+            // دوباره باز شدن درها
+            leftDoor.style.transform = `translateX(0)`;
+            rightDoor.style.transform = `translateX(0)`;
+        }
+
+        // تغییر شفافیت متن آسانسور
+        elevatorText.style.opacity = 1 - scrollPercentage;
+        elevatorText.classList.add('delayed');
+
+
+        // نمایش یا پنهان کردن بخش پارک
+        if (scrollPercentage >= 1) {
+            parkSection.style.display = 'flex';
+        } else {
+            parkSection.style.display = 'none';
+        }
+    }
+});
+
+
+
+
+
+
+
+
+
+
+window.addEventListener('scroll', () => {
+    const parkSection = document.querySelector('.park-container');
+    const parkContent = document.querySelector('.park-content');
+
+    const parkRect = parkSection.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const sectionHeight = parkSection.offsetHeight;
+
+    // بررسی اینکه بخش پارک وارد دید شده است
+    if (parkRect.top < windowHeight && parkRect.bottom > 0) {
+        // محاسبه درصد اسکرول دقیق درون سکشن پارک
+        const scrollPercentage = Math.min(
+            Math.max((windowHeight - parkRect.top) / (windowHeight + sectionHeight), 0),
+            1
+        );
+
+        // زوم بک‌گراند
+        const maxScale = 1.3; // حداکثر مقدار زوم
+        const scale = 1 + scrollPercentage * (maxScale - 1);
+        parkSection.style.backgroundSize = `${scale * 100}% ${scale * 100}%`;
+
+        // محو شدن متن (اختیاری)
+        parkContent.style.opacity = 1 - scrollPercentage * 0; // متن محو نمی‌شود
+    }
+});
