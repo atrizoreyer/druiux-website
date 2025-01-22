@@ -100,7 +100,6 @@ body {
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
   background-color: transparent !important;
-  /*background-color: var(--bs-body-bg);*/
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
@@ -10840,10 +10839,12 @@ html {
 
 .page-section {
   padding: 6rem 0;
+  z-index: 2;
 }
 .page-section .page-section-heading {
   font-size: 2.25rem;
   line-height: 2rem;
+  z-index: 2;
 }
 @media (min-width: 992px) {
   .page-section .page-section-heading {
@@ -11062,7 +11063,7 @@ html, body {
   /*background-size: cover;*/
  /* background-position: center;*/
  /* background-repeat: no-repeat;*/
-
+ z-index: 2;
   /* حذف رنگ قبلی */
   background-color: #1a1a1a;
 }
@@ -11092,6 +11093,7 @@ html, body {
   position: relative; /* اطمینان از تأثیرپذیری transform */
   /* تنظیمات انیمیشن */
   animation: fadeInLeft 1.5s ease-in forwards; /* زمان و افکت انیمیشن */
+  z-index: 2;
 }
 
 
@@ -11101,6 +11103,7 @@ html, body {
   width: 200px;
   height: 200px;
   margin-bottom: 1rem; /* فاصله از متن */
+  z-index: 2
 }
 
 
@@ -11115,7 +11118,7 @@ html, body {
   object-fit: cover;
   border-radius: 20%; /* گرد کردن تصویر */
   opacity: 0;
-  z-index: 2; /* لایه بالاتر */
+  z-index: 3; /* لایه بالاتر */
   animation: fadeInOriginal 4s ease 1.7s forwards; /* تأخیر انیمیشن */
 }
 /* تصویر کارتونی */
@@ -11129,7 +11132,7 @@ html, body {
   border-radius: 20%; /* گرد کردن تصویر */
   opacity: 0;
   transform: translateX(-300px); /* شروع خارج از صفحه */
-  z-index: 1; /* لایه پایین‌تر */
+  z-index: 2; /* لایه پایین‌تر */
   animation: move 2s ease forwards, fade 1s ease 1s forwards;
 }
 
@@ -11175,6 +11178,7 @@ html, body {
   padding: 10px 20px; /* فاصله داخلی */
   border-radius: 10px; /* گوشه‌های گرد */
   display: inline-block; /* عرض متن محدود به محتوای آن */
+  
 }
 
 
@@ -11207,6 +11211,13 @@ html, body {
 
 .masthead-heading-container {
   background: rgba(0, 0, 0, 0.5); /* مستطیل نیمه‌شفاف */
+  padding: 10px 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.masthead-heading-containerr {
+  background: rgba(0, 0, 0, 0.8); /* مستطیل نیمه‌شفاف */
   padding: 10px 20px;
   border-radius: 10px;
   display: inline-block;
@@ -11257,6 +11268,7 @@ html, body {
   max-width: 25rem;
   border-radius: 0.5rem;
   overflow: hidden;
+  z-index: 2;
   
 }
 .portfolio .portfolio-item .portfolio-item-caption {
@@ -11266,28 +11278,34 @@ html, body {
   transition: all 0.2s ease-in-out;
   opacity: 0;
   background-color: rgba(26, 188, 156, 0.9);
+  z-index: 2;
   
 }
 .portfolio .portfolio-item .portfolio-item-caption:hover {
   opacity: 1;
+  z-index: 2;
 }
 .portfolio .portfolio-item .portfolio-item-caption .portfolio-item-caption-content {
   font-size: 1.5rem;
+  z-index: 2;
 }
 
 .portfolio-modal .btn-close {
   color: #1abc9c;
   font-size: 2rem;
   padding: 1rem;
+  z-index: 2;
 }
 .portfolio-modal .portfolio-modal-title {
   font-size: 2.25rem;
   line-height: 2rem;
+  z-index: 2;
 }
 @media (min-width: 992px) {
   .portfolio-modal .portfolio-modal-title {
     font-size: 3rem;
     line-height: 2.5rem;
+    z-index: 2;
   }
 }
 
@@ -11345,20 +11363,29 @@ html, body {
   height: 100%;
   width: 50%; /* عرض درها */
   object-fit: cover;
-  transition: transform 1s ease-in-out;
+  transition: transform 0.5s ease-in-out;
+  left: unset; /* حذف ویژگی left */
+  right: unset; /* حذف ویژگی right */
 }
 
 .left-door {
   left: 0;
-  transform: translateX(0);
+ /* transform: translateX(0); */
 }
 
 .right-door {
   right: 0;
-  transform: translateX(0);
+  /* transform: translateX(0); */
 }
 
 .elevator-text {
+  margin: 0;
+  padding: 10px;
+  display: inline; /* جلوگیری از ایجاد پس‌زمینه مستطیلی */
+  background: rgba(20, 101, 81, 0.8); /* تیره کردن پشت متن */
+  border-radius: 5px; /* گرد کردن گوشه‌های هایلایت */
+  line-height: 2;
+  padding: 5px 10px; /* فاصله داخلی برای خواناتر شدن متن */
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11367,15 +11394,22 @@ html, body {
   text-align: center;
   font-size: 1.5rem;
   opacity: 1;
-  transition: opacity 3s ease-in-out; /* انیمیشن محو شدن */
-  transition-delay: 5s; /* تأخیر 2 ثانیه‌ای قبل از شروع انیمیشن */
+  transition: opacity 5s ease-in-out; /* انیمیشن محو شدن سریعتر */
+  /* transition-delay: 5s;*/ /* تأخیر 2 ثانیه‌ای قبل از شروع انیمیشن */
 
 }
+
+
+
+
+
+
+
 
 /* Park Section */
 .park-container {
   position: relative;
-  background-image: url('../assets/img/walk park.jpg');
+  background-image: url('../assets/img/hallway.jpg');
   background-size: auto 100%;
   background-position: center top;
   background-repeat: no-repeat; /* جلوگیری از تکرار تصویر */
@@ -11403,7 +11437,7 @@ html, body {
   margin: 0;
   padding: 10px;
   display: inline; /* جلوگیری از ایجاد پس‌زمینه مستطیلی */
-  background: rgba(0, 0, 0, 0.6); /* تیره کردن پشت متن */
+  background: rgba(20, 101, 81, 0.6); /* تیره کردن پشت متن */
   border-radius: 5px; /* گرد کردن گوشه‌های هایلایت */
   line-height: 2;
   padding: 5px 10px; /* فاصله داخلی برای خواناتر شدن متن */
@@ -11439,7 +11473,7 @@ html, body {
 /* استایل برای موبایل */
 @media (max-width: 768px) {
   .park-container {
-    background-image: url('../assets/img/walk park - Copy.jpg'); /* تصویر برای موبایل */
+    background-image: url('../assets/img/hallway.jpg'); /* تصویر برای موبایل */
    /* background-attachment: scroll; */ /* برای جلوگیری از مشکلات در موبایل */
     background-size: auto 100%; /* اندازه مناسب تصویر */
     background-position: center top; /* موقعیت مناسب تصویر */
@@ -11587,5 +11621,55 @@ html, body {
   color: orangered; /* رنگ قرمز یا نارنجی روشن */
   font-weight: bold;
 }
+
+
+
+
+
+
+
+/* Walk Section */
+.walk-section {
+  position: relative;
+  height: 300vh; /* فضای اسکرول برای متن‌ها */
+  overflow: hidden;
+  background: none; /* استفاده نکردن از پس‌زمینه مشکی */
+}
+
+.walk-image-container {
+  position: fixed; /* تغییر از absolute به fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+ /* z-index: 1; */
+  overflow: hidden;
+}
+
+.walk-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1);
+  transition: transform 0.5s ease-out;
+  will-change: transform; /* بهبود عملکرد */
+}
+
+.walk-text-container {
+  position: relative; /* تغییر از absolute به relative */
+  margin-top: 100vh; /* شروع متن‌ها بعد از استاپ زوم */
+  /* z-index: 3; */
+  text-align: center;
+  color: #fff;
+}
+
+.walk-text {
+  font-size: 1.5rem;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+
 
 

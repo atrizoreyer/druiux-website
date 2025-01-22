@@ -101,7 +101,7 @@ document.addEventListener("scroll", function () {
 
 
 
-
+// ELEVATOR
   window.addEventListener('scroll', () => {
     const elevatorSection = document.querySelector('.elevator-container');
     const leftDoor = document.querySelector('.left-door');
@@ -121,31 +121,31 @@ document.addEventListener("scroll", function () {
         );
 
         // حرکت درها
-        if (scrollPercentage < 0.5) {
+        if (scrollPercentage < 0.33) {
             // باز بودن درها در ابتدا
             leftDoor.style.transform = `translateX(0)`;
             rightDoor.style.transform = `translateX(0)`;
-        } else if (scrollPercentage < 1) {
+        } else if (scrollPercentage < 0.9) {
             // بسته شدن درها در میانه
             leftDoor.style.transform = `translateX(-100%)`;
             rightDoor.style.transform = `translateX(100%)`;
-        } else {
+        } else if (scrollPercentage > 0.9) {
             // دوباره باز شدن درها
             leftDoor.style.transform = `translateX(0)`;
             rightDoor.style.transform = `translateX(0)`;
         }
 
         // تغییر شفافیت متن آسانسور
-        elevatorText.style.opacity = 1 - scrollPercentage;
-        elevatorText.classList.add('delayed');
+       // elevatorText.style.opacity = 1 - scrollPercentage;
+        // elevatorText.classList.add('delayed');
 
 
         // نمایش یا پنهان کردن بخش پارک
-        if (scrollPercentage >= 1) {
-            parkSection.style.display = 'flex';
-        } else {
-            parkSection.style.display = 'none';
-        }
+    //    if (scrollPercentage >= 1) {
+    //        parkSection.style.display = 'flex';
+     //   } else {
+    //        parkSection.style.display = 'none';
+     //   }
     }
 });
 
@@ -184,3 +184,49 @@ window.addEventListener('scroll', () => {
         parkContent.style.opacity = 1 - scrollPercentage * 0; // متن محو نمی‌شود
     }
 });
+
+
+
+
+// walk
+
+document.addEventListener("scroll", () => {
+    const walkSection = document.querySelector(".walk-section");
+    const walkImage = document.querySelector(".walk-image");
+    const walkTexts = document.querySelectorAll(".walk-text");
+  
+    const sectionRect = walkSection.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+  
+    // زوم تصویر بدون خروج از محدوده سکشن
+    if (sectionRect.top <= 0) {
+        // محاسبه میزان زوم بر اساس موقعیت سکشن
+        const zoomFactor = 1 + Math.abs(sectionRect.top / sectionRect.height) * 0.5;
+        walkImage.style.transform = `scale(${zoomFactor})`;
+      } else {
+        walkImage.style.transform = "scale(1)"; // بازگشت به حالت اولیه در صورتی که سکشن هنوز وارد صفحه نشده باشد
+      }
+  
+    // نمایش متن‌ها به ترتیب
+    walkTexts.forEach((text, index) => {
+        const delayBetweenTexts = 0.5; // فاصله بین شروع هر متن (نسبت به ویوپورت)
+        const textStart = viewportHeight * (index + delayBetweenTexts * index) * 0.2; // زمان شروع هر متن
+        const textEnd = textStart + viewportHeight * 0.5; // زمان پایان هر متن
+      
+        if (Math.abs(sectionRect.top) >= textStart && Math.abs(sectionRect.top) < textEnd) {
+          text.style.opacity = 1;
+          text.style.transform = "translateY(0)";
+        } else {
+          text.style.opacity = 0;
+          text.style.transform = "translateY(50px)";
+        }
+      });
+  });
+  
+  
+  
+  
+  
+  
+  
+  
