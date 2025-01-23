@@ -11312,8 +11312,17 @@ html, body {
 .footer {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #1a1a1a;
-  color: #fff;
+  position: relative;
+  height: 100vh;
+  background-image: url('../assets/img/sketch.jpg'); /* تصویر مورد نظر */
+  background-size: cover;
+  background-attachment: fixed; /* بکگراند ثابت برای حرکت با اسکرول */
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  color: rgba(0, 0, 0, 0.8);
+  
 }
 
 
@@ -11564,20 +11573,33 @@ html, body {
 /* Thank You Section */
 /* بخش اصلی سکشن تشکر */
 .thank-you-section {
+  
+  position: relative;
+  height: 100vh;
+  background-image: url('../assets/img/sketch.jpg'); /* تصویر مورد نظر */
+  background-size: cover;
+  background-attachment: fixed; /* بکگراند ثابت برای حرکت با اسکرول */
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
   text-align: center;
   padding: 60px 20px;
-  background-color: #1a1a1a; /* رنگ پس‌زمینه تیره */
-  color: #fff; /* رنگ متن سفید */
+  color: rgba(0, 0, 0, 0.7); /* رنگ متن سفید */
 }
 
 /* استایل برای عنوان h2 (با نور و پس‌زمینه روشن که با hover تغییر می‌کند) */
 .thank-you-section h2 {
   font-size: 3rem;
+  
   margin-bottom: 20px;
   font-weight: bold;
   letter-spacing: 2px;
   position: relative;
   z-index: 1;
+  
   transition: transform 0.3s ease; /* حرکت نرم هنگام hover */
 }
 
@@ -11609,15 +11631,22 @@ html, body {
 
 /* استایل برای پاراگراف (p) */
 .thank-you-section p {
+  
   font-size: 1.5rem;
   max-width: 700px;
   margin: 0 auto 20px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8); /* رنگ سفید محو */
+  color: rgba(0, 0, 0, 0.8); /* رنگ سفید محو */
+  background-color: rgba(255, 255, 255, 0.5); /* پس‌زمینه شفاف برای خوانایی بهتر */
+  border-radius: 10px; /* گوشه‌های گرد */
+  display: inline-block; /* عرض متن محدود به محتوای آن */
 }
 
 /* رنگ آخرین جمله به نارنجی یا قرمز (مورد علاقه شما) */
 .thank-you-section .last-sentence {
+  background-color: rgba(255, 255, 255, 0.3); /* پس‌زمینه شفاف برای خوانایی بهتر */
+  border-radius: 10px; /* گوشه‌های گرد */
+  display: inline-block; /* عرض متن محدود به محتوای آن */
   color: orangered; /* رنگ قرمز یا نارنجی روشن */
   font-weight: bold;
 }
