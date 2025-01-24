@@ -11056,7 +11056,7 @@ html, body {
                         /* k */
 
 .masthead-portfolio {
-  padding-top: calc(-1rem + 1px);
+  padding-top: calc(1rem + 1px);
   padding-bottom: 6rem;
   /* اضافه کردن تصویر پس‌زمینه */
   /*background-image: url('../assets/img/desktop.jpg'); *//* مسیر تصویر */
@@ -11309,21 +11309,7 @@ html, body {
   }
 }
 
-.footer {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  position: relative;
-  height: 100vh;
-  background-image: url('../assets/img/sketch.jpg'); /* تصویر مورد نظر */
-  background-size: cover;
-  background-attachment: fixed; /* بکگراند ثابت برای حرکت با اسکرول */
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;  
-  color: rgba(0, 0, 0, 0.8);
-  
-}
+
 
 
 .copyright {
@@ -11467,7 +11453,7 @@ html, body {
   .park-content {
     top: 50px; /* فاصله بیشتر از سکشن بالا */
     padding: 20px 15px; /* فاصله کمتر از چپ و راست در موبایل */
-    margin-bottom: 50px; /* فاصله بیشتر از پایین */
+    margin-bottom: 70px; /* فاصله بیشتر از پایین */
   }
 
   .park-content h2 {
@@ -11658,8 +11644,34 @@ html, body {
 }
 
 
+.footer {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  position: relative;
+  height: 100vh;
+  background-image: url('../assets/img/sketch.jpg'); /* تصویر مورد نظر */
+  background-size: cover;
+  background-attachment: fixed; /* بکگراند ثابت برای حرکت با اسکرول */
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  color: rgba(0, 0, 0, 0.8);
+  
+}
 
+@media (max-width: 768px) {
+  .footer.thank-you-section {
+    background-image: url('../assets/img/sketch.jpg'); /* نسخه مخصوص موبایل */
+    background-attachment: scroll; /* تغییر حالت بکگراند */
+  }
 
+  .thank-you-section {
+    background-image: url('../assets/img/sketch.jpg'); /* نسخه مخصوص موبایل */
+    background-attachment: scroll;
+  }
+}
 
 
 
@@ -11709,9 +11721,8 @@ html, body {
 @media (max-width: 768px) {
 .walk-text {
 margin-bottom: -90px;
-
 transform: translateY(50px);
-transition: opacity 1.9s ease, transform 1.9s ease;
+transition: opacity 1s ease, transform 1s ease;
   }
 }
 
@@ -11722,7 +11733,8 @@ transition: opacity 1.9s ease, transform 1.9s ease;
     margin-top: 100vh; /* شروع متن‌ها بعد از استاپ زوم */
     text-align: center;
     color: #fff;
-    margin-bottom: 100px;
+    padding-bottom: 90px;
+
   }
 }
 

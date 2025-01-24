@@ -156,8 +156,6 @@ document.addEventListener("scroll", function () {
 
 
 
-
-
 window.addEventListener('scroll', () => {
     const parkSection = document.querySelector('.park-container');
     const parkContent = document.querySelector('.park-content');
@@ -189,39 +187,55 @@ window.addEventListener('scroll', () => {
 
 
 // walk
+// تعریف متغیر زمان‌بندی
+let delayBetweenTexts = 0.5;
 
+// تعریف تابع برای تنظیم مقدار بر اساس سایز صفحه
+const updateSettings = () => {
+  if (window.matchMedia("(max-width: 768px)").matches) {
+    delayBetweenTexts = 1.4; // تنظیم برای موبایل
+  } else {
+    delayBetweenTexts = 0.5; // تنظیم برای دسکتاپ
+  }
+};
+
+// مقداردهی اولیه
+updateSettings();
+
+// شنونده تغییر سایز صفحه
+window.addEventListener("resize", updateSettings);
+
+// اسکرول
 document.addEventListener("scroll", () => {
-    const walkSection = document.querySelector(".walk-section");
-    const walkImage = document.querySelector(".walk-image");
-    const walkTexts = document.querySelectorAll(".walk-text");
-  
-    const sectionRect = walkSection.getBoundingClientRect();
-    const viewportHeight = window.innerHeight;
-  
-    // زوم تصویر بدون خروج از محدوده سکشن
-    if (sectionRect.top <= 0) {
-        // محاسبه میزان زوم بر اساس موقعیت سکشن
-        const zoomFactor = 1 + Math.abs(sectionRect.top / sectionRect.height) * 0.5;
-        walkImage.style.transform = `scale(${zoomFactor})`;
-      } else {
-        walkImage.style.transform = "scale(1)"; // بازگشت به حالت اولیه در صورتی که سکشن هنوز وارد صفحه نشده باشد
-      }
-  
-    // نمایش متن‌ها به ترتیب
-    walkTexts.forEach((text, index) => {
-        const delayBetweenTexts = 0.5; // فاصله بین شروع هر متن (نسبت به ویوپورت)
-        const textStart = viewportHeight * (index + delayBetweenTexts * index) * 0.2; // زمان شروع هر متن
-        const textEnd = textStart + viewportHeight * 0.5; // زمان پایان هر متن
-      
-        if (Math.abs(sectionRect.top) >= textStart && Math.abs(sectionRect.top) < textEnd) {
-          text.style.opacity = 1;
-          text.style.transform = "translateY(0)";
-        } else {
-          text.style.opacity = 0;
-          text.style.transform = "translateY(50px)";
-        }
-      });
+  const walkSection = document.querySelector(".walk-section");
+  const walkImage = document.querySelector(".walk-image");
+  const walkTexts = document.querySelectorAll(".walk-text");
+
+  const sectionRect = walkSection.getBoundingClientRect();
+  const viewportHeight = window.innerHeight;
+
+  // زوم تصویر بدون خروج از محدوده سکشن
+  if (sectionRect.top <= 0) {
+    const zoomFactor = 1 + Math.abs(sectionRect.top / sectionRect.height) * 0.5;
+    walkImage.style.transform = `scale(${zoomFactor})`;
+  } else {
+    walkImage.style.transform = "scale(1)";
+  }
+
+  // نمایش متن‌ها به ترتیب
+  walkTexts.forEach((text, index) => {
+    const textStart = viewportHeight * (index + delayBetweenTexts * index) * 0.2; 
+    const textEnd = textStart + viewportHeight * 0.5;
+
+    if (Math.abs(sectionRect.top) >= textStart && Math.abs(sectionRect.top) < textEnd) {
+      text.style.opacity = 1;
+      text.style.transform = "translateY(0)";
+    } else {
+      text.style.opacity = 0;
+      text.style.transform = "translateY(50px)";
+    }
   });
+});
   
   
   
