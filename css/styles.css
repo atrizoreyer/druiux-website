@@ -8048,7 +8048,7 @@ textarea.form-control-lg {
 /* رنگ portfolio */
 .text-secondary {
   --bs-text-opacity: 1;
-  color: yellow !important;
+  color: darkred !important;
 }
 
 .text-success {
