@@ -120,11 +120,11 @@ window.addEventListener('scroll', () => {
     );
 
     // انیمیشن درها
-    if (scrollPercentage < 0.33) {
+    if (scrollPercentage < 0.60) {
       // مرحله اول: درها باز هستند
       leftDoor.style.transform = `translateX(0)`;
       rightDoor.style.transform = `translateX(0)`;
-    } else if (scrollPercentage >= 0.33 && scrollPercentage < 0.9) {
+    } else if (scrollPercentage >= 0.60 && scrollPercentage < 0.9) {
       // مرحله دوم: درها بسته می‌شوند
       if (isMobile) {
         // تنظیم برای موبایل

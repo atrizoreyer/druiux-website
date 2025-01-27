@@ -11415,24 +11415,33 @@ html, body {
 
 
 .elevator-text {
-  margin: 0;
-  padding: 10px;
-  display: inline; /* جلوگیری از ایجاد پس‌زمینه مستطیلی */
-  background: rgba(20, 101, 81, 0.8); /* تیره کردن پشت متن */
-  border-radius: 5px; /* گرد کردن گوشه‌های هایلایت */
-  line-height: 2;
-  padding: 5px 10px; /* فاصله داخلی برای خواناتر شدن متن */
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  text-align: center;
-  font-size: 1.5rem;
-  opacity: 1;
-  transition: opacity 5s ease-in-out; /* انیمیشن محو شدن سریعتر */
-  /* transition-delay: 5s;*/ /* تأخیر 2 ثانیه‌ای قبل از شروع انیمیشن */
+  top: 50%; /* قرارگیری در مرکز از لحاظ عمودی */
+  left: 100%; /* قرارگیری در مرکز از لحاظ افقی */
+  transform: translate(-50%, -50%); /* جابجایی برای دقیقاً وسط قرار دادن */
+  color: #fff; /* رنگ متن */
+  text-align: center; /* تراز متن به صورت وسط */
+  font-size: 2rem; /* اندازه متن */
+  background: rgba(20, 101, 81, 0.8); /* پس‌زمینه برای خوانایی بهتر */
+  border-radius: 8px; /* گرد کردن گوشه‌ها */
+  padding: 10px 20px; /* فاصله داخلی برای جذابیت بیشتر */
+  opacity: 0; /* محو بودن اولیه */
+  z-index: 2; /* مطمئن شوید بالاتر از سایر عناصر است */
 
+  animation: fadeIn 2s ease-in-out forwards; /* انیمیشن محو شدن به آرامی */
+  max-width: 90%; /* جلوگیری از شکستن متن در موبایل */
+  word-wrap: break-word; /* جلوگیری از بروز مشکل در متن‌های طولانی */
+  line-height: 1.5; /* فاصله مناسب بین خطوط */
+}
+
+/* انیمیشن فید */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* شروع محو */
+  }
+  to {
+    opacity: 1; /* پایان ظاهر */
+  }
 }
 
 
