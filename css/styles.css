@@ -11426,21 +11426,21 @@ html, body {
   border-radius: 8px; /* گرد کردن گوشه‌ها */
   padding: 10px 20px; /* فاصله داخلی برای جذابیت بیشتر */
   opacity: 0; /* محو بودن اولیه */
-  z-index: 2; /* مطمئن شوید بالاتر از سایر عناصر است */
+  z-index: 1; /* مطمئن شوید بالاتر از سایر عناصر است */
 
-  animation: fadeIn 2s ease-in-out forwards; /* انیمیشن محو شدن به آرامی */
+  animation: fadeLoop 3s ease-in-out infinite;
   max-width: 90%; /* جلوگیری از شکستن متن در موبایل */
   word-wrap: break-word; /* جلوگیری از بروز مشکل در متن‌های طولانی */
   line-height: 1.5; /* فاصله مناسب بین خطوط */
 }
 
 /* انیمیشن فید */
-@keyframes fadeIn {
-  from {
-    opacity: 0; /* شروع محو */
+@keyframes fadeLoop {
+  0%, 100% {
+    opacity: 1; /* پررنگ */
   }
-  to {
-    opacity: 1; /* پایان ظاهر */
+  50% {
+    opacity: 0.3; /* کمرنگ */
   }
 }
 
@@ -11525,6 +11525,19 @@ html, body {
   }
 }
 
+
+/* تنظیم بخش ابر */
+.cloud {
+  position: relative; /* نسبت به کل صفحه */
+  z-index: 5; /* بالاتر از آسانسور */
+  width: 100%; /* عرض تمام صفحه */
+  height: 40vh; /* ارتفاع مناسب برای ابر */
+  background-image: url('../assets/img/cloud1.png'); /* تصویر ابر */
+  background-size: 160% 50vh; /* تنظیم اندازه تصویر */
+  background-repeat: no-repeat; /* جلوگیری از تکرار */
+  background-position: center; /* قرارگیری تصویر در مرکز */
+  margin-top: -20vh; /* کمی روی آسانسور قرار بگیرد */
+}
 
 
 
@@ -11698,7 +11711,7 @@ html, body {
   padding-top: 5rem;
   padding-bottom: 5rem;
   position: relative;
-  height: 100vh;
+  height: 60vh;
   background-image: url('../assets/img/sketch.jpg'); /* تصویر مورد نظر */
   background-size: cover;
   background-attachment: fixed; /* بکگراند ثابت برای حرکت با اسکرول */
