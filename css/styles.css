@@ -11330,48 +11330,89 @@ html, body {
 
 
 /* Elevator Section */
-.elevator-container {
+.elevator {
   position: relative;
   height: 100vh;
-  width: 100vw; /* عرض صفحه به طور کامل */
-  background-image: url('../assets/img/cabin elevator.jpg'); /* مسیر تصویر را جایگزین کنید */
-  background-size: cover; /* این باعث می‌شود که تصویر به طور کامل پس‌زمینه را پر کند */
-  background-position: center; /* تصویر در وسط قرار می‌گیرد */
+  width: 100vw;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+
 }
 
-.elevator-doors {
-  position: fixed; /* یا absolute */
+/* Background */
+.elevator-background {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100vw; /* عرض به اندازه کل صفحه */
-  height: 100vh; /* ارتفاع به اندازه کل صفحه */
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/img/cabin elevator.jpg'); /* تصویر دیوار اطراف آسانسور */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Elevator Doors */
+.elevator-doors {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  z-index: 2;
 }
 
 .door {
-  position: absolute;
+  position: relative;
   height: 100%;
-  width: 50%; /* عرض درها */
+  width: 50%;
   object-fit: cover;
   transition: transform 0.5s ease-in-out;
-  left: unset; /* حذف ویژگی left */
-  right: unset; /* حذف ویژگی right */
+}
+
+.left-door,
+.right-door {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+  z-index: 2;
+  transition: transform 1s ease;
 }
 
 .left-door {
-  left: 0;
- /* transform: translateX(0); */
+  left: 50%; /* درها فقط روی کابین قرار بگیرند */
+  transform: translateX(0); /* موقعیت اولیه: باز */
 }
 
 .right-door {
-  right: 0;
-  /* transform: translateX(0); */
+  right: -50%; /* درها فقط روی کابین قرار بگیرند */
+  transform: translateX(0); /* موقعیت اولیه: باز */
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .elevator-background {
+    background-image: url('../assets/img/cabin elevator.jpg'); /* تصویر داخل کابین آسانسور */
+  }
+  .left-door {
+    left: 0; /* درها تمام عرض کابین را بپوشانند */
+    width: 100%;
+  }
+
+  .right-door {
+    right: -100%; /* درها تمام عرض کابین را بپوشانند */
+    width: 100%;
+  }
+}
+
+
 
 .elevator-text {
   margin: 0;
