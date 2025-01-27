@@ -11637,7 +11637,7 @@ html, body {
 /* رنگ آخرین جمله به نارنجی یا قرمز (مورد علاقه شما) */
 .thank-you-section .last-sentence {
   font-size: 2rem;
-  color: orangered; /* رنگ قرمز یا نارنجی روشن */
+  color: red; /* رنگ قرمز یا نارنجی روشن */
   font-weight: bold;
   
 
