@@ -11531,12 +11531,12 @@ html, body {
   position: relative; /* نسبت به کل صفحه */
   z-index: 5; /* بالاتر از آسانسور */
   width: 100%; /* عرض تمام صفحه */
-  height: 40vh; /* ارتفاع مناسب برای ابر */
-  background-image: url('../assets/img/cloud1.png'); /* تصویر ابر */
-  background-size: 160% 50vh; /* تنظیم اندازه تصویر */
+  height: 50vh; /* ارتفاع مناسب برای ابر */
+  background-image: url('../assets/img/cloud000.png'); /* تصویر ابر */
+  background-size: 100% 50vh; /* تنظیم اندازه تصویر */
   background-repeat: no-repeat; /* جلوگیری از تکرار */
   background-position: center; /* قرارگیری تصویر در مرکز */
-  margin-top: -20vh; /* کمی روی آسانسور قرار بگیرد */
+  margin-top: -35vh; /* کمی روی آسانسور قرار بگیرد */
 }
 
 
