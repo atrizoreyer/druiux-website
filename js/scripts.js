@@ -148,87 +148,40 @@ window.addEventListener('scroll', () => {
 
 
 
-
-window.addEventListener('scroll', () => {
-    const parkSection = document.querySelector('.park-container');
-    const parkContent = document.querySelector('.park-content');
-
-    const parkRect = parkSection.getBoundingClientRect();
-    const windowHeight = window.innerHeight;
-    const sectionHeight = parkSection.offsetHeight;
-
-    // بررسی اینکه بخش پارک وارد دید شده است
-    if (parkRect.top < windowHeight && parkRect.bottom > 0) {
-        // محاسبه درصد اسکرول دقیق درون سکشن پارک
-        const scrollPercentage = Math.min(
-            Math.max((windowHeight - parkRect.top) / (windowHeight + sectionHeight), 0),
-            1
-        );
-
-        // زوم بک‌گراند
-        const maxScale = 1.3; // حداکثر مقدار زوم
-        const scale = 1 + scrollPercentage * (maxScale - 1);
-        parkSection.style.backgroundSize = `${scale * 100}% ${scale * 100}%`;
-        parkSection.style.backgroundPosition = 'center top';
-
-        // محو شدن متن (اختیاری)
-        parkContent.style.opacity = 1 - scrollPercentage * 0; // متن محو نمی‌شود
-    }
-});
-
-
-
-
-// walk
-// تعریف متغیر زمان‌بندی
-let delayBetweenTexts = 0.5;
-
-// تعریف تابع برای تنظیم مقدار بر اساس سایز صفحه
-const updateSettings = () => {
-  if (window.matchMedia("(max-width: 768px)").matches) {
-    delayBetweenTexts = 1.4; // تنظیم برای موبایل
-  } else {
-    delayBetweenTexts = 0.5; // تنظیم برای دسکتاپ
-  }
-};
-
-// مقداردهی اولیه
-updateSettings();
-
-// شنونده تغییر سایز صفحه
-window.addEventListener("resize", updateSettings);
-
-// اسکرول
+//walk
 document.addEventListener("scroll", () => {
   const walkSection = document.querySelector(".walk-section");
   const walkImage = document.querySelector(".walk-image");
   const walkTexts = document.querySelectorAll(".walk-text");
 
+  if (!walkSection || !walkImage || walkTexts.length === 0) return;
+
   const sectionRect = walkSection.getBoundingClientRect();
   const viewportHeight = window.innerHeight;
 
-  // زوم تصویر بدون خروج از محدوده سکشن
+  // زوم تصویر وقتی به بالای صفحه رسید
   if (sectionRect.top <= 0) {
-    const zoomFactor = 1 + Math.abs(sectionRect.top / sectionRect.height) * 0.5;
-    walkImage.style.transform = `scale(${zoomFactor})`;
+      let zoomFactor = 1 + Math.abs(sectionRect.top / sectionRect.height) * 0.7;
+      if (zoomFactor > 2) zoomFactor = 2; // محدود کردن زوم
+      walkImage.style.transform = `scale(${zoomFactor})`;
   } else {
-    walkImage.style.transform = "scale(1)";
+      walkImage.style.transform = "scale(1)";
   }
 
-  // نمایش متن‌ها به ترتیب
+  // نمایش متن‌ها به ترتیب با افکت محو و بونس
   walkTexts.forEach((text, index) => {
-    const textStart = viewportHeight * (index + delayBetweenTexts * index) * 0.2; 
-    const textEnd = textStart + viewportHeight * 0.5;
+    const textStart = viewportHeight * (index * (window.innerWidth <= 768 ? 0.4 : 0.4));
+    const textEnd = textStart + viewportHeight * (window.innerWidth <= 768 ? 0.55 : 0.4);
 
-    if (Math.abs(sectionRect.top) >= textStart && Math.abs(sectionRect.top) < textEnd) {
-      text.style.opacity = 1;
-      text.style.transform = "translateY(0)";
-    } else {
-      text.style.opacity = 0;
-      text.style.transform = "translateY(50px)";
-    }
+      if (Math.abs(sectionRect.top) >= textStart && Math.abs(sectionRect.top) < textEnd) {
+          text.classList.add("active");
+      } else {
+          text.classList.remove("active");
+      }
   });
 });
+
+
   
   
   
