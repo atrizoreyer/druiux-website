@@ -186,7 +186,60 @@ document.addEventListener("scroll", () => {
   
   
   
-  
-  
+document.addEventListener("DOMContentLoaded", function () {
+  const cursor = document.createElement("div");
+  cursor.classList.add("cursor");
+  document.body.appendChild(cursor);
+
+  let trailTimeout; // زمان تایم‌اوت برای حذف دنباله‌ها
+
+  document.addEventListener("mousemove", (e) => {
+    // حرکت کرسر اصلی
+    requestAnimationFrame(() => {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    });
+
+    // ایجاد رد پا در محل موس
+    createTrail(e.clientX, e.clientY);
+
+    // حذف دنباله‌ها پس از 0.6 ثانیه
+    clearTimeout(trailTimeout);
+    trailTimeout = setTimeout(() => {
+        removeTrails();
+    }, 600);  // زمان برای از بین بردن رد پاها
+  });
+
+  // تابع برای ایجاد دنباله‌ها
+  function createTrail(x, y) {
+    for (let i = 0; i < 5; i++) {  // ایجاد 3 دایره
+      const trail = document.createElement("div");
+      trail.classList.add("trail");
+      document.body.appendChild(trail);
+
+      // ایجاد یک تغییر کوچک در موقعیت به‌طور تصادفی برای هر دایره
+      const offsetX = (Math.random() - 0.5) * 10;  // تغییرات تصادفی در موقعیت
+      const offsetY = (Math.random() - 0.5) * 10;
+
+      trail.style.left = `${x + offsetX}px`;
+      trail.style.top = `${y + offsetY}px`;
+
+      // حذف دنباله بعد از 0.6 ثانیه
+      setTimeout(() => {
+        trail.remove();
+      }, 600);  // زمان انیمیشن
+    }
+  }
+
+  // حذف تمامی دنباله‌ها
+  function removeTrails() {
+    const trails = document.querySelectorAll(".trail");
+    trails.forEach((trail) => trail.remove());
+  }
+});
+
+
+
+
+
   
   
