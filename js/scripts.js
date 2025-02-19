@@ -185,20 +185,23 @@ document.addEventListener("scroll", () => {
   
   
   
-  
-document.addEventListener("DOMContentLoaded", function () {
+ // کرسر
+ document.addEventListener("DOMContentLoaded", function () {
   const cursor = document.createElement("div");
   cursor.classList.add("cursor");
   document.body.appendChild(cursor);
 
   let trailTimeout; // زمان تایم‌اوت برای حذف دنباله‌ها
 
+  // برای موبایل و تبلت رویداد "touchmove" اضافه می‌کنیم
   document.addEventListener("mousemove", (e) => {
-    // حرکت کرسر اصلی
-    requestAnimationFrame(() => {
-        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-    });
-
+    if (window.innerWidth > 768) {  // فقط در حالت دسکتاپ
+      // حرکت کرسر اصلی
+      requestAnimationFrame(() => {
+          cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      });
+    }
+    
     // ایجاد رد پا در محل موس
     createTrail(e.clientX, e.clientY);
 
@@ -207,6 +210,12 @@ document.addEventListener("DOMContentLoaded", function () {
     trailTimeout = setTimeout(() => {
         removeTrails();
     }, 600);  // زمان برای از بین بردن رد پاها
+  });
+
+  // رویداد لمس برای موبایل و تبلت
+  document.addEventListener("touchmove", (e) => {
+    const touch = e.touches[0]; // اولین تماس انگشت
+    createTrail(touch.clientX, touch.clientY);
   });
 
   // تابع برای ایجاد دنباله‌ها
@@ -236,6 +245,7 @@ document.addEventListener("DOMContentLoaded", function () {
     trails.forEach((trail) => trail.remove());
   }
 });
+
 
 
 
