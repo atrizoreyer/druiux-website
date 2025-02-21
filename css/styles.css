@@ -1297,7 +1297,7 @@ progress {
   }
   .col-lg-4 {
     flex: 0 0 auto;
-    width: 33.33333333%;
+    width: 50%;
   }
   .col-lg-5 {
     flex: 0 0 auto;
@@ -11427,24 +11427,24 @@ html, body {
 
 
 .elevator-text {
-  position: absolute;
-  top: 50%; /* قرارگیری در مرکز از لحاظ عمودی */
-  left: 100%; /* قرارگیری در مرکز از لحاظ افقی */
-  transform: translate(-50%, -50%); /* جابجایی برای دقیقاً وسط قرار دادن */
+  position: relative;
+  top: -10%; /* قرارگیری در مرکز از لحاظ عمودی */
+  left: 80%; /* قرارگیری در مرکز از لحاظ افقی */
+  /*transform: translate(-50%, -50%);*/ /* جابجایی برای دقیقاً وسط قرار دادن */
   color: #fff; /* رنگ متن */
-  text-align: center; /* تراز متن به صورت وسط */
   font-size: 2rem; /* اندازه متن */
   background: rgba(20, 101, 81, 0.8); /* پس‌زمینه برای خوانایی بهتر */
   border-radius: 8px; /* گرد کردن گوشه‌ها */
-  padding: 10px 20px; /* فاصله داخلی برای جذابیت بیشتر */
+  padding: 20px 20px; /* فاصله داخلی برای جذابیت بیشتر */
   opacity: 0; /* محو بودن اولیه */
   z-index: 1; /* مطمئن شوید بالاتر از سایر عناصر است */
-
+  text-align: center;
   animation: fadeLoop 3s ease-in-out infinite;
   max-width: 90%; /* جلوگیری از شکستن متن در موبایل */
   word-wrap: break-word; /* جلوگیری از بروز مشکل در متن‌های طولانی */
   line-height: 1.5; /* فاصله مناسب بین خطوط */
 }
+
 
 /* انیمیشن فید */
 @keyframes fadeLoop {
@@ -11456,86 +11456,18 @@ html, body {
   }
 }
 
-
-
-
-
-
-
-
-/* Park Section */
-.park-container {
-  position: relative;
-  background-image: url('../assets/img/hallway.jpg');
-  background-size: auto 100%;
-  background-position: center top;
-  background-repeat: no-repeat; /* جلوگیری از تکرار تصویر */
-  background-color: #333; /* رنگ نزدیک به بک‌گراند تصویر */
-
- /* background-attachment: fixed;*/
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.park-content {
-  position: sticky;
-  top: 20%;
-  text-align: center;
-  color: #fff;
-  z-index: 2;
-  padding: 20px;
-}
-
-.park-content h2, 
-.park-content p {
-  margin: 0;
-  padding: 10px;
-  display: inline; /* جلوگیری از ایجاد پس‌زمینه مستطیلی */
-  background: rgba(20, 101, 81, 0.6); /* تیره کردن پشت متن */
-  border-radius: 5px; /* گرد کردن گوشه‌های هایلایت */
-  line-height: 2;
-  padding: 5px 10px; /* فاصله داخلی برای خواناتر شدن متن */
-}
-
-.park-content h2 {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-}
-
-.park-content p {
-  font-size: 1.75rem;
-  max-width: 700px;
-}
-
-/* استایل برای موبایل */
 @media (max-width: 768px) {
-  .park-content {
-    top: 50px; /* فاصله بیشتر از سکشن بالا */
-    padding: 20px 15px; /* فاصله کمتر از چپ و راست در موبایل */
-    margin-bottom: 70px; /* فاصله بیشتر از پایین */
-  }
-
-  .park-content h2 {
-    font-size: 2.5rem; /* کوچک‌تر کردن متن عنوان */
-  }
-
-  .park-content p {
-    font-size: 1.25rem; /* کوچک‌تر کردن متن پاراگراف */
+  .elevator-text {
+    left: 57%;
   }
 }
 
-/* استایل برای موبایل */
-@media (max-width: 768px) {
-  .park-container {
-    background-image: url('../assets/img/hallway.jpg'); /* تصویر برای موبایل */
-   /* background-attachment: scroll; */ /* برای جلوگیری از مشکلات در موبایل */
-    background-size: auto 100%; /* اندازه مناسب تصویر */
-    background-position: center top; /* موقعیت مناسب تصویر */
-  }
-}
+
+
+
+
+
+
 
 
 /* تنظیم بخش ابر */
@@ -11576,8 +11508,9 @@ html, body {
   text-align: left;
   color: #fff;
   z-index: 2;
-  padding: 20px;
-  line-height: 3rem;
+  padding-left: 200px;
+  padding-right: 200px;
+  line-height: 2.2rem;
 
 }
 
@@ -11586,12 +11519,19 @@ html, body {
   .experiences-container {
    /* background-image: url('../assets/img/walk park - Copy.jpg');*/ /* تصویر برای موبایل */
    /* background-attachment: scroll; */ /* برای جلوگیری از مشکلات در موبایل */
+   
     background-size: auto 100%; /* اندازه مناسب تصویر */
     background-position: center top; /* موقعیت مناسب تصویر */
 
   }
 }
+@media (max-width: 768px) {
+  .experiences-content {
+   padding-left: 30px;
+   padding-right: 30px;
 
+  }
+}
 
 
 
