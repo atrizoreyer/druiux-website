@@ -252,4 +252,57 @@ document.addEventListener("scroll", () => {
 
 
   
-  
+  //Case Study
+  document.addEventListener("DOMContentLoaded", function () {
+    const slider = document.querySelector(".slider");
+    const leftBtn = document.querySelector(".left-btn");
+    const rightBtn = document.querySelector(".right-btn");
+
+    let scrollSpeed = 1; // سرعت اولیه
+    let isScrolling = true;
+
+    function duplicateSlides() {
+        const slides = document.querySelectorAll(".case-study");
+        slides.forEach(slide => {
+            let clone = slide.cloneNode(true);
+            slider.appendChild(clone);
+        });
+    }
+
+    function moveSlider() {
+        if (isScrolling) {
+            slider.style.transform = `translateX(-${scrollSpeed}px)`;
+            scrollSpeed += 0.5;
+            if (scrollSpeed > slider.scrollWidth / 2) {
+                scrollSpeed = 1;
+                slider.style.transform = `translateX(0px)`;
+            }
+        }
+        requestAnimationFrame(moveSlider);
+    }
+
+    function increaseSpeed() {
+        isScrolling = false;
+        scrollSpeed += 2;
+    }
+
+    function decreaseSpeed() {
+        isScrolling = false;
+        scrollSpeed -= 2;
+    }
+
+    function resumeAutoScroll() {
+        isScrolling = true;
+    }
+
+    leftBtn.addEventListener("mousedown", decreaseSpeed);
+    leftBtn.addEventListener("mouseup", resumeAutoScroll);
+    rightBtn.addEventListener("mousedown", increaseSpeed);
+    rightBtn.addEventListener("mouseup", resumeAutoScroll);
+
+    duplicateSlides();
+    moveSlider();
+});
+
+
+
