@@ -102,8 +102,13 @@ body {
   background-color: transparent !important;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  overflow-x: hidden; /* جلوگیری از اسکرول افقی در کل صفحه */
 
 }
+ /* فقط اجازه اسکرول عمودی بده */
+section:not(.case-study-slider) {
+  touch-action: pan-y;
+  }
 
 hr {
   margin: 1rem 0;
@@ -11724,6 +11729,7 @@ font-size: 2rem;
 .walk-section {
   position: relative;
   height: 300vh; /* فضای اسکرول برای نمایش کامل زوم */
+  width: 100vw;
   background: black; /* رنگ پس‌زمینه */
   overflow: hidden;
   z-index: 1; /* زیر سایر سکشن‌ها */
@@ -11930,7 +11936,7 @@ font-size: 2rem;
 /* دکمه‌های ناوبری */
 .slider-btn {
   position: absolute;
-  top: 50%;
+  top: 70%;
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
@@ -11944,6 +11950,7 @@ font-size: 2rem;
   justify-content: center;
   align-items: center;
   transition: background 0.3s;
+  z-index: 4;
 }
 
 .left-btn {
