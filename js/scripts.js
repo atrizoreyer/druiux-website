@@ -255,11 +255,13 @@ document.addEventListener("scroll", () => {
   //Case Study
   document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".slider");
+    const sliderContainer = document.querySelector(".slider-container");
     const leftBtn = document.querySelector(".left-btn");
     const rightBtn = document.querySelector(".right-btn");
 
-    let scrollSpeed = 1; // سرعت اولیه
+    let scrollSpeed = 1;
     let isScrolling = true;
+    let translateX = 0; // مقدار اولیه‌ی حرکت
 
     function duplicateSlides() {
         const slides = document.querySelectorAll(".case-study");
@@ -271,34 +273,41 @@ document.addEventListener("scroll", () => {
 
     function moveSlider() {
         if (isScrolling) {
-            slider.style.transform = `translateX(-${scrollSpeed}px)`;
-            scrollSpeed += 0.5;
-            if (scrollSpeed > slider.scrollWidth / 2) {
-                scrollSpeed = 1;
+            translateX -= scrollSpeed;
+            slider.style.transform = `translateX(${translateX}px)`;
+
+            if (Math.abs(translateX) > slider.scrollWidth / 2) {
+                translateX = 0;
                 slider.style.transform = `translateX(0px)`;
             }
         }
         requestAnimationFrame(moveSlider);
     }
 
-    function increaseSpeed() {
+    function stopScrolling() {
         isScrolling = false;
-        scrollSpeed += 2;
     }
 
-    function decreaseSpeed() {
-        isScrolling = false;
-        scrollSpeed -= 2;
-    }
-
-    function resumeAutoScroll() {
+    function resumeScrolling() {
         isScrolling = true;
     }
 
-    leftBtn.addEventListener("mousedown", decreaseSpeed);
-    leftBtn.addEventListener("mouseup", resumeAutoScroll);
-    rightBtn.addEventListener("mousedown", increaseSpeed);
-    rightBtn.addEventListener("mouseup", resumeAutoScroll);
+    leftBtn.addEventListener("click", function () {
+        stopScrolling();
+        translateX += 100; // مقدار حرکت به راست
+        slider.style.transform = `translateX(${translateX}px)`;
+        setTimeout(resumeScrolling, 1000); // بعد از ۱ ثانیه دوباره حرکت کنه
+    });
+
+    rightBtn.addEventListener("click", function () {
+        stopScrolling();
+        translateX -= 100; // مقدار حرکت به چپ
+        slider.style.transform = `translateX(${translateX}px)`;
+        setTimeout(resumeScrolling, 1000);
+    });
+
+    sliderContainer.addEventListener("mouseenter", stopScrolling);
+    sliderContainer.addEventListener("mouseleave", resumeScrolling);
 
     duplicateSlides();
     moveSlider();

@@ -103,12 +103,10 @@ body {
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-x: hidden; /* جلوگیری از اسکرول افقی در کل صفحه */
+  touch-action: pan-y;
 
 }
- /* فقط اجازه اسکرول عمودی بده */
-section:not(.case-study-slider) {
-  touch-action: pan-y;
-  }
+
 
 hr {
   margin: 1rem 0;
@@ -11880,14 +11878,13 @@ font-size: 2rem;
 
 .slider-container {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden; /* جلوگیری از اسکرول ناخواسته */
   position: relative;
 }
 
 .slider {
   display: flex;
   gap: 20px;
-  animation: infiniteScroll 10s linear infinite;
   will-change: transform;
 }
 
@@ -11907,6 +11904,11 @@ font-size: 2rem;
   width: 100%;
   height: auto;
   border-radius: 10px;
+}
+
+.slider-container {
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .case-content {
@@ -11950,7 +11952,7 @@ font-size: 2rem;
   justify-content: center;
   align-items: center;
   transition: background 0.3s;
-  z-index: 4;
+  z-index: 10; /* مطمئن بشه روی همه‌ی عناصر قرار داره */
 }
 
 .left-btn {
@@ -11972,9 +11974,12 @@ font-size: 2rem;
   }
 
   .slider-btn {
-      width: 40px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       font-size: 20px;
+      top: 70%;
+      border-radius: 0.5pc;
+
   }
 }
 
