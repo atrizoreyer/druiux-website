@@ -11864,6 +11864,8 @@ font-size: 2rem;
   width: 100%;
   background: black;
   padding: 50px 0;
+  padding-bottom: 150px;
+
   overflow: hidden;
   display: flex;
   flex-direction: column;
