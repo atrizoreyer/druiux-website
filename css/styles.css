@@ -11942,10 +11942,10 @@ font-size: 2rem;
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
-  background: black;
+  background: rgba(0, 0, 0, 0.6);
   border: 2px solid white;
   color: white;
-  border-radius: 50%;
+  border-radius: 0.5pc;
   cursor: pointer;
   font-size: 24px;
   display: flex;
@@ -11978,8 +11978,6 @@ font-size: 2rem;
       height: 60px;
       font-size: 20px;
       top: 70%;
-      border-radius: 0.5pc;
-
   }
 }
 
