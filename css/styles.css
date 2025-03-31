@@ -11863,9 +11863,7 @@ font-size: 2rem;
   position: relative;
   width: 100%;
   background: black;
-  padding: 50px 0;
-  padding-bottom: 150px;
-
+  padding: 50px 0 150px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -11880,14 +11878,14 @@ font-size: 2rem;
 
 .slider-container {
   width: 100%;
-  overflow-x: hidden; /* جلوگیری از اسکرول ناخواسته */
+  overflow-x: hidden;
   position: relative;
 }
 
 .slider {
   display: flex;
   gap: 20px;
-  will-change: transform;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* کارت‌های کیس استادی */
@@ -11900,17 +11898,15 @@ font-size: 2rem;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 300px; /* عرض مینیمم برای اسلایدر */
+  position: relative; /* برای اینکه دکمه بتونه به پایین کارت چسبیده باشه */
+  padding-bottom: 50px; /* به اندازه ارتفاع دکمه و فاصله موردنظر فضای پایین کارت باز کنیم */
 }
 
 .case-study img {
   width: 100%;
   height: auto;
   border-radius: 10px;
-}
-
-.slider-container {
-  overflow: hidden;
-  white-space: nowrap;
 }
 
 .case-content {
@@ -11931,6 +11927,11 @@ font-size: 2rem;
   color: white;
   text-decoration: none;
   border-radius: 5px;
+  transition: background 0.3s;
+  position: absolute;
+  bottom: 20px; /* دکمه همیشه 10 پیکسل از پایین کارت فاصله داشته باشه */
+  left: 50%;
+  transform: translateX(-50%); /* دکمه رو دقیقاً وسط کارت تنظیم می‌کنه */
 }
 
 .view-more:hover {
@@ -11940,7 +11941,7 @@ font-size: 2rem;
 /* دکمه‌های ناوبری */
 .slider-btn {
   position: absolute;
-  top: 70%;
+  top: 60%;
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
@@ -11954,7 +11955,7 @@ font-size: 2rem;
   justify-content: center;
   align-items: center;
   transition: background 0.3s;
-  z-index: 10; /* مطمئن بشه روی همه‌ی عناصر قرار داره */
+  z-index: 10;
 }
 
 .left-btn {
@@ -11966,21 +11967,22 @@ font-size: 2rem;
 }
 
 .slider-btn:hover {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
 }
 
 /* حالت موبایل */
 @media (max-width: 768px) {
   .case-study {
       flex: 0 0 80%;
+      min-width: 250px;
   }
 
   .slider-btn {
-      width: 60px;
-      height: 60px;
+      width: 45px;
+      height: 45px;
       font-size: 20px;
-      top: 70%;
+      top: 60%;
   }
 }
-
 
