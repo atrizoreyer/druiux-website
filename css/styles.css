@@ -11038,6 +11038,7 @@ html {
 /* Parallax Background */
 .parallax-background {
   position: absolute;
+  
   top: 0;
   left: 0;
   width: 100%;
@@ -11224,7 +11225,7 @@ html, body {
 }
 
 .masthead-heading-container {
-  background: rgba(0, 0, 0, 0.5); /* مستطیل نیمه‌شفاف */
+  background: rgba(0, 0, 0, 0.9); /* مستطیل نیمه‌شفاف */
   padding: 10px 20px;
   border-radius: 10px;
   display: inline-block;
