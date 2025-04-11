@@ -11765,7 +11765,7 @@ font-size: 2rem;
 
   padding: 20px;
   text-align: center;
-  color: white;
+  color: black;
 }
 
 .walk-text {
@@ -11773,6 +11773,8 @@ font-size: 2rem;
   opacity: 0;
   transform: translateY(50px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  background: rgba(225, 225, 225, 0.7); /* پس‌زمینه برای خوانایی بهتر */
+  border-radius: 8px; /* گرد کردن گوشه‌ها */
 }
 
 /* افکت نمایش متن‌ها */

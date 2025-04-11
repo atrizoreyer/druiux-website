@@ -171,7 +171,7 @@ document.addEventListener("scroll", () => {
   // نمایش متن‌ها به ترتیب با افکت محو و بونس
   walkTexts.forEach((text, index) => {
     const textStart = viewportHeight * (index * (window.innerWidth <= 768 ? 0.4 : 0.4));
-    const textEnd = textStart + viewportHeight * (window.innerWidth <= 768 ? 0.55 : 0.4);
+    const textEnd = textStart + viewportHeight * (window.innerWidth <= 768 ? 0.55 : 0.7);
 
       if (Math.abs(sectionRect.top) >= textStart && Math.abs(sectionRect.top) < textEnd) {
           text.classList.add("active");
