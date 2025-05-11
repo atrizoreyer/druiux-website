@@ -104,6 +104,7 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   overflow-x: hidden; /* جلوگیری از اسکرول افقی در کل صفحه */
   touch-action: pan-y;
+  min-height: 100%;
 
 }
 
@@ -3624,6 +3625,37 @@ textarea.form-control-lg {
   border-top-right-radius: 0;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .nav {
   --bs-nav-link-padding-x: 1rem;
   --bs-nav-link-padding-y: 0.5rem;
@@ -3747,12 +3779,12 @@ textarea.form-control-lg {
 
 .navbar {
   --bs-navbar-padding-x: 0;
-  --bs-navbar-padding-y: 0.5rem;
+  --bs-navbar-padding-y: 0.3rem;
   --bs-navbar-color: rgba(0, 0, 0, 0.55);
   --bs-navbar-hover-color: rgba(0, 0, 0, 0.7);
   --bs-navbar-disabled-color: rgba(0, 0, 0, 0.3);
   --bs-navbar-active-color: rgba(0, 0, 0, 0.9);
-  --bs-navbar-brand-padding-y: 0.3125rem;
+  --bs-navbar-brand-padding-y: 0.2rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
   --bs-navbar-brand-color: rgba(0, 0, 0, 0.5);
@@ -4167,6 +4199,27 @@ textarea.form-control-lg {
   --bs-navbar-toggler-border-color: rgba(255, 255, 255, 0.1);
   --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .card {
   --bs-card-spacer-y: 1rem;
@@ -10916,22 +10969,35 @@ html {
   transition: background 0.3s ease, padding-top 0.3s, padding-bottom 0.3s;
 }
 
+
+
+
+
+
+
+
+
+
+/* ============================= */
+/*         NAVIGATION           */
+/* ============================= */
+
 #mainNav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.05rem;
+  padding-bottom: 0.05rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
-
-  /* اضافه کردن گرادیان به پس‌زمینه */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(34, 47, 62, 0.9));
   transition: background 0.3s ease, padding-top 0.3s, padding-bottom 0.3s;
+    transition: all 0.3s ease;
 }
 
 #mainNav.navbar-shrink {
-  /* تغییر پس‌زمینه هنگام اسکرول */
+    padding-top: 0.01rem;
+    padding-bottom: 0.01rem;
   background-color: rgba(34, 47, 62, 0.9);
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.05rem;
+  padding-bottom: 0.05rem;
   transition: background-color 0.3s ease, padding-top 0.3s, padding-bottom 0.3s;
 }
 
@@ -10951,7 +11017,8 @@ html {
   color: #1abc9c;
 }
 
-#mainNav .navbar-nav li.nav-item a.nav-link:active, #mainNav .navbar-nav li.nav-item a.nav-link:focus {
+#mainNav .navbar-nav li.nav-item a.nav-link:active,
+#mainNav .navbar-nav li.nav-item a.nav-link:focus {
   color: #fff;
 }
 
@@ -10964,47 +11031,58 @@ html {
   padding: 0.8rem;
 }
 
+
+/* ============================= */
+/*     NAVIGATION - DESKTOP     */
+/* ============================= */
+
 @media (min-width: 992px) {
   #mainNav {
-    background: linear-gradient(to bottom, rgba(34, 47, 62, 0.9), rgba(34, 47, 62, 0.9)); /* گرادیان از بالا به پایین */
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-    transition: padding-top 0.3s, padding-bottom 0.3s, background 0.3s;
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(34, 47, 62, 0.3));
+    padding-top: 0.05rem;
+    padding-bottom: 0.05rem;
+    box-shadow: none;
+    transition: background-color 0.3s ease, padding 0.3s;
   }
-  #mainNav {
-   background: #1abc9c;
-    box-shadow: none; /* حذف سایه احتمالی */
-    transition: background-color 0.3s ease; /* افکت تغییر پس‌زمینه */
-  }
+
   #mainNav .navbar-brand {
     font-size: 1.75em;
+    color: #fff;
     transition: font-size 0.3s ease;
-    color: #fff  /*!important*/;
-    /*box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);*/
   }
+
   #mainNav .navbar-nav {
     margin-top: 0;
   }
+
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active {
-    color: rgba(34, 47, 62, 0.9);;
+    color: rgba(34, 47, 62, 0.9);
     background: #1abc9c;
   }
-  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active,
+
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover,
   #mainNav .navbar-nav > li.nav-item > a.nav-link.active:focus,
-  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:hover {
+  #mainNav .navbar-nav > li.nav-item > a.nav-link.active:active {
     color: #fff;
     background: #1abc9c;
   }
+
   #mainNav.navbar-shrink {
-    background-color: rgba(34, 47, 62, 0.9); /* رنگ طوسی تیره با ته‌مایه سبز */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* سایه برای جذابیت */
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(34, 47, 62, 0.3));
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
+
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.5em;
-    color: #ffffff !important; /* رنگ متن هنگام اسکرول */
+    color: #ffffff !important;
   }
 }
+
+
+/* ============================= */
+/*           FORMS              */
+/* ============================= */
+
 .form-floating input.form-control,
 .form-floating textarea.form-control {
   font-size: 1.5rem;
@@ -11014,14 +11092,17 @@ html {
   border-radius: 0;
   border-width: 1px;
 }
+
 .form-floating input.form-control:focus,
 .form-floating textarea.form-control:focus {
   box-shadow: none;
 }
+
 .form-floating label {
   font-size: 1.5rem;
   color: #6c757d;
 }
+
 
 
 
@@ -11054,6 +11135,7 @@ html {
 
 html, body {
   background-color: transparent; /* یا مقدار دلخواه */
+
 }
 
 
@@ -11432,31 +11514,29 @@ html, body {
 
 .elevator-text {
   position: relative;
-  top: -10%; /* قرارگیری در مرکز از لحاظ عمودی */
-  left: 80%; /* قرارگیری در مرکز از لحاظ افقی */
-  /*transform: translate(-50%, -50%);*/ /* جابجایی برای دقیقاً وسط قرار دادن */
-  color: #fff; /* رنگ متن */
-  font-size: 2rem; /* اندازه متن */
-  background: rgba(20, 101, 81, 0.8); /* پس‌زمینه برای خوانایی بهتر */
-  border-radius: 8px; /* گرد کردن گوشه‌ها */
-  padding: 20px 20px; /* فاصله داخلی برای جذابیت بیشتر */
-  opacity: 0; /* محو بودن اولیه */
-  z-index: 1; /* مطمئن شوید بالاتر از سایر عناصر است */
+  top: -10%;
+  left: 80%;
+  color: #fff;
+  font-size: 2rem;
+  background-color: rgba(20, 101, 81, 0.8); /* مقدار اولیه برای انیمیشن */
+  border-radius: 8px;
+  padding: 20px 20px;
+  z-index: 6;
   text-align: center;
-  animation: fadeLoop 3s ease-in-out infinite;
-  max-width: 90%; /* جلوگیری از شکستن متن در موبایل */
-  word-wrap: break-word; /* جلوگیری از بروز مشکل در متن‌های طولانی */
-  line-height: 1.5; /* فاصله مناسب بین خطوط */
+  animation: backgroundFade 4s ease-in-out infinite;
+  max-width: 90%;
+  word-wrap: break-word;
+  line-height: 1.5;
 }
 
-
-/* انیمیشن فید */
-@keyframes fadeLoop {
+/* انیمیشن تغییر رنگ بک‌گراند */
+@keyframes backgroundFade {
   0%, 100% {
-    opacity: 1; /* پررنگ */
+    background-color: rgba(0, 0, 0, 0.8); /* طوسی روشن‌تر */
   }
   50% {
-    opacity: 0.3; /* کمرنگ */
+    background-color: rgba(10, 50, 50, 0.8); /* سبز تیره  */
+
   }
 }
 
@@ -11465,6 +11545,7 @@ html, body {
     left: 57%;
   }
 }
+
 
 
 
