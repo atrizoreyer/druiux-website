@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amirreza Nezami – UX Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Saira+Semi+Condensed:wght@400;700&display=swap');
+      body {
+        font-family: 'Bai Jamjuree', sans-serif;
+        background-color: #ffffff;
+      }
+      h1, h2, h3 {
+        font-family: 'Saira Semi Condensed', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="text-[#121212] bg-white relative overflow-x-hidden">
+
+
+
+
+
+
+
+
+
+
+<!-- ✅ Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
+
+    <!-- Logo -->
+    <div class="text-lg font-semibold text-[#FE4D00]">Amirreza Nezami– Portfolio</div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-10 text-sm text-gray-800 font-medium">
+    <a href="index.html#home" class="hover:text-[#FE4D00] transition">Home</a>
+    <a href="/case-studies.html" class="hover:text-[#FE4D00] transition">CaseStudy</a>
+    <a href="/experience.html" class="hover:text-[#FE4D00] transition">Experiences</a>
+    <a href="#contact" class="hover:text-[#FE4D00] transition">Contact</a>
+    </nav>
+
+    <!-- Menu Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-[#FE4D00] focus:outline-none z-50 relative">
+      <!-- Hamburger Icon -->
+      <svg id="menu-icon" class="w-6 h-6 block" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+
+      <!-- X Icon -->
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu"
+    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden flex flex-col bg-white/90 backdrop-blur-md px-6 py-0 space-y-4 text-gray-800 text-base font-medium shadow-md">
+    <a href="index.html#home" class="hover:text-[#FE4D00] transition">Home</a>
+    <a href="/case-studies.html" class="hover:text-[#FE4D00] transition">CaseStudy</a>
+    <a href="/experience.html" class="hover:text-[#FE4D00] transition">Experiences</a>
+    <a href="#contact" class="hover:text-[#FE4D00] transition">Contact</a>
+  </div>
+</header>
+
+
+<!-- ✅ JavaScript for Mobile Menu -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  let isMenuOpen = false;
+
+  function toggleMenu(state) {
+    isMenuOpen = state !== undefined ? state : !isMenuOpen;
+
+    if (isMenuOpen) {
+      mobileMenu.classList.remove('max-h-0', 'py-0');
+      mobileMenu.classList.add('max-h-[300px]', 'py-4');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.remove('max-h-[300px]', 'py-4');
+      mobileMenu.classList.add('max-h-0', 'py-0');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    const isClickInside = toggleBtn.contains(event.target) || mobileMenu.contains(event.target);
+    if (!isClickInside && isMenuOpen) {
+      toggleMenu(false);
+    }
+  });
+
+  // Close menu when clicking on a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+</script>
+
+
+
+
+  <!-- Page Title -->
+  <section class="px-6 md:px-12 pt-12 pb-6 text-center bg-gradient-to-b from-[#E0F0FF] to-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Selected Projects</h2>
+    <p class="text-gray-600">A few snapshots from my UX journey — experiments, client work, and passion projects.</p>
+  
+    <!-- Image Section -->
+    <div class="flex justify-center md:justify-end">
+      <img src="./assets/images/CaseStudy/friends 1.png" alt="friends" class="w-auto h-auto  object-cover">
+    </div>
+</section>
+
+
+
+  <!-- Project Sections -->
+  <main class="px-6 md:px-12 space-y-24 py-12">
+
+    <!-- Project 1 -->
+    <section class="flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2 space-y-4">
+        <h3 class="text-2xl font-bold">Project One</h3>
+        <p class="text-gray-600">Description of project one goes here. Focused on simplicity, usability, and delightful user experience.</p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+        <img src="./assets/images/project1-1.jpg" alt="Project 1A" class="rounded-xl shadow" />
+        <img src="./assets/images/project1-2.jpg" alt="Project 1B" class="rounded-xl shadow" />
+      </div>
+    </section>
+
+    <!-- Project 2 -->
+    <section class="flex flex-col md:flex-row-reverse items-center gap-8">
+      <div class="md:w-1/2 space-y-4">
+        <h3 class="text-2xl font-bold">Project Two</h3>
+        <p class="text-gray-600">Description of project two goes here. A UX-focused redesign that improved KPIs significantly.</p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+        <img src="./assets/images/project2-1.jpg" alt="Project 2A" class="rounded-xl shadow" />
+        <img src="./assets/images/project2-2.jpg" alt="Project 2B" class="rounded-xl shadow" />
+      </div>
+    </section>
+
+    <!-- Project 3 -->
+    <section class="flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2 space-y-4">
+        <h3 class="text-2xl font-bold">Project Three</h3>
+        <p class="text-gray-600">A dashboard design for data visualization, focused on clarity and hierarchy.</p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+        <img src="./assets/images/project3-1.jpg" alt="Project 3A" class="rounded-xl shadow" />
+        <img src="./assets/images/project3-2.jpg" alt="Project 3B" class="rounded-xl shadow" />
+      </div>
+    </section>
+
+    <!-- Project 4 -->
+    <section class="flex flex-col md:flex-row-reverse items-center gap-8">
+      <div class="md:w-1/2 space-y-4">
+        <h3 class="text-2xl font-bold">Project Four</h3>
+        <p class="text-gray-600">Design system creation and component documentation for a scalable UI kit.</p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+        <img src="./assets/images/project4-1.jpg" alt="Project 4A" class="rounded-xl shadow" />
+        <img src="./assets/images/project4-2.jpg" alt="Project 4B" class="rounded-xl shadow" />
+      </div>
+    </section>
+
+    <!-- Project 5 -->
+    <section class="flex flex-col md:flex-row items-center gap-8">
+      <div class="md:w-1/2 space-y-4">
+        <h3 class="text-2xl font-bold">Project Five</h3>
+        <p class="text-gray-600">A mobile-first experience for booking and managing travel seamlessly.</p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+        <img src="./assets/images/project5-1.jpg" alt="Project 5A" class="rounded-xl shadow" />
+        <img src="./assets/images/project5-2.jpg" alt="Project 5B" class="rounded-xl shadow" />
+      </div>
+    </section>
+
+    <!-- Project 6 -->
+    <section class="flex flex-col md:flex-row-reverse items-center gap-8">
+      <div class="md:w-1/2 space-y-4">
+        <h3 class="text-2xl font-bold">Project Six</h3>
+        <p class="text-gray-600">A minimalist e-commerce UI that prioritizes product discovery and accessibility.</p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-4">
+        <img src="./assets/images/project6-1.jpg" alt="Project 6A" class="rounded-xl shadow" />
+        <img src="./assets/images/project6-2.jpg" alt="Project 6B" class="rounded-xl shadow" />
+      </div>
+    </section>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer id="contact" class="bg-black px-6 md:px-12 py-16 text-[#F5F6FA]">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Text Section -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4 text-white">Get in touch</h2>
+      <h3 class="text-xl font-semibold mb-2">Amirreza Nezami</h3>
+      <p class="text-[#D1D5DB] mb-4">I'd love to hear from you. Let's chat about your design needs and ideas.</p>
+
+      <div class="mb-4">
+        <p class="text-sm font-medium text-[#E5E7EB] mb-1">📧 Send me an email</p>
+        <p class="text-[#D1D5DB]">amirreza.nezami28@gmail.com</p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-sm font-medium text-[#E5E7EB] mb-1">📞 Give me a call</p>
+        <p class="text-[#D1D5DB]">+1 (647) 741-2890</p>
+        <p class="text-gray-400 text-sm">I'm available Monday to Friday, 9am to 5pm.</p>
+      </div>
+
+      <a href="https://www.linkedin.com/in/amirreza-nezami" target="_blank" class="inline-block mt-2 text-[#FE4D00] font-medium hover:underline">
+        💼 Connect on LinkedIn
+      </a>
+
+      <p class="mt-8 text-lg font-semibold text-white">Let’s make something great together! 🚀</p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="flex justify-center md:justify-end">
+      <img src="./assets/images/pic/Amirreza Nezami.jpeg" alt="Amirreza Nezami" class="w-72 h-auto rounded-2xl shadow-lg object-cover">
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

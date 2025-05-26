@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amirreza Nezami – UX Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Saira+Semi+Condensed:wght@400;700&display=swap');
+      body {
+        font-family: 'Bai Jamjuree', sans-serif;
+        background-color: #ffffff;
+      }
+      h1, h2, h3 {
+        font-family: 'Saira Semi Condensed', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="text-[#121212] bg-white relative overflow-x-hidden">
+
+
+
+
+
+
+
+
+
+
+<!-- ✅ Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
+
+    <!-- Logo -->
+    <div class="text-lg font-semibold text-[#FE4D00]">Amirreza Nezami– Experiences</div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-10 text-sm text-gray-800 font-medium">
+    <a href="index.html#home" class="hover:text-[#FE4D00] transition">Home</a>
+    <a href="/portfolio.html" class="hover:text-[#FE4D00] transition">Portfolio</a>
+    <a href="/case-studies.html" class="hover:text-[#FE4D00] transition">CaseStudy</a>
+    <a href="#contact" class="hover:text-[#FE4D00] transition">Contact</a>
+    </nav>
+
+    <!-- Menu Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-[#FE4D00] focus:outline-none z-50 relative">
+      <!-- Hamburger Icon -->
+      <svg id="menu-icon" class="w-6 h-6 block" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+
+      <!-- X Icon -->
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu"
+    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden flex flex-col bg-white/90 backdrop-blur-md px-6 py-0 space-y-4 text-gray-800 text-base font-medium shadow-md">
+    <a href="index.html#home" class="hover:text-[#FE4D00] transition">Home</a>
+    <a href="/portfolio.html" class="hover:text-[#FE4D00] transition">Portfolio</a>
+    <a href="/case-studies.html" class="hover:text-[#FE4D00] transition">CaseStudy</a>
+    <a href="#contact" class="hover:text-[#FE4D00] transition">Contact</a>
+  </div>
+</header>
+
+
+<!-- ✅ JavaScript for Mobile Menu -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  let isMenuOpen = false;
+
+  function toggleMenu(state) {
+    isMenuOpen = state !== undefined ? state : !isMenuOpen;
+
+    if (isMenuOpen) {
+      mobileMenu.classList.remove('max-h-0', 'py-0');
+      mobileMenu.classList.add('max-h-[300px]', 'py-4');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.remove('max-h-[300px]', 'py-4');
+      mobileMenu.classList.add('max-h-0', 'py-0');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    const isClickInside = toggleBtn.contains(event.target) || mobileMenu.contains(event.target);
+    if (!isClickInside && isMenuOpen) {
+      toggleMenu(false);
+    }
+  });
+
+  // Close menu when clicking on a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+</script>
+
+
+
+
+
+  <!-- Page Title -->
+  <section class="px-6 md:px-12 pt-12 pb-6 text-center bg-gradient-to-b from-[#E0F0FF] to-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4">Experience & Skills</h2>
+    <p class="text-gray-600">A look into where I’ve worked, what I know, and how I got here.</p>
+  </section>
+
+
+
+      <!-- Image Section -->
+    <div class="flex justify-center md:justify-end">
+      <img src="./assets/images/CaseStudy/friends 1.png" alt="friends" class="w-auto h-auto  object-cover">
+    </div>
+
+
+  <main class="px-6 md:px-12 py-12 space-y-16">
+
+    <!-- Work Experience -->
+    <section>
+      <h3 class="text-2xl font-bold mb-6">🧑‍💻 Work Experience</h3>
+
+      <div class="space-y-10">
+        <!-- Experience 1 -->
+        <div>
+          <h4 class="font-semibold text-lg">Project Administrator – IT & Design Projects</h4>
+          <p class="text-sm text-gray-600">HSA Inc. · Jan 2024 – Present (Hybrid)</p>
+          <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+            <li>Facilitated cross-functional collaboration between IT and design teams.</li>
+            <li>Managed timelines, resources, and deliverables using Agile workflows.</li>
+            <li>Contributed to UI/UX audits and web optimization initiatives.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 2 -->
+        <div>
+          <h4 class="font-semibold text-lg">User Experience Designer</h4>
+          <p class="text-sm text-gray-600">Hami Ofogh Farda · Aug 2020 – Sep 2023 (Remote)</p>
+          <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+            <li>Led UX research and usability testing for mobile/web apps.</li>
+            <li>Redesigned interfaces based on user data, boosting usability by 20%.</li>
+            <li>Created design systems and interactive prototypes.</li>
+          </ul>
+        </div>
+
+        <!-- Experience 3 -->
+        <div>
+          <h4 class="font-semibold text-lg">GUI Designer</h4>
+          <p class="text-sm text-gray-600">PixelSense Agency · Mar 2019 – Mar 2020 (Remote)</p>
+          <ul class="list-disc list-inside mt-2 text-gray-700 space-y-1">
+            <li>Designed visual UI for e-commerce platforms and dashboards.</li>
+            <li>Collaborated with front-end teams to translate designs into code.</li>
+            <li>Maintained consistent branding and accessibility standards.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h3 class="text-2xl font-bold mb-6">🛠️ Skills</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-700">
+
+        <div>
+          <h4 class="font-semibold text-lg mb-2">UX & Research</h4>
+          <ul class="list-disc list-inside space-y-1">
+            <li>User Interviews</li>
+            <li>Usability Testing</li>
+            <li>Journey Mapping</li>
+            <li>Wireframing</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-lg mb-2">Design Tools</h4>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Figma</li>
+            <li>Adobe XD</li>
+            <li>Photoshop</li>
+            <li>Illustrator</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-lg mb-2">Development</h4>
+          <ul class="list-disc list-inside space-y-1">
+            <li>HTML & CSS</li>
+            <li>JavaScript (basic)</li>
+            <li>Tailwind CSS</li>
+            <li>Git / GitHub</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h3 class="text-2xl font-bold mb-6">🎓 Education</h3>
+      <div class="space-y-6 text-gray-700">
+        <div>
+          <p class="font-semibold">UI/UX Design Certificate</p>
+          <p class="text-sm text-gray-600">Google UX Design Certificate · Coursera · 2023</p>
+        </div>
+        <div>
+          <p class="font-semibold">B.Sc. in Industrial Engineering</p>
+          <p class="text-sm text-gray-600">Specialized in Systems Planning and Analysis · 2018</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <footer id="contact" class="bg-black px-6 md:px-12 py-16 text-[#F5F6FA]">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Text Section -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4 text-white">Get in touch</h2>
+      <h3 class="text-xl font-semibold mb-2">Amirreza Nezami</h3>
+      <p class="text-[#D1D5DB] mb-4">I'd love to hear from you. Let's chat about your design needs and ideas.</p>
+
+      <div class="mb-4">
+        <p class="text-sm font-medium text-[#E5E7EB] mb-1">📧 Send me an email</p>
+        <p class="text-[#D1D5DB]">amirreza.nezami28@gmail.com</p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-sm font-medium text-[#E5E7EB] mb-1">📞 Give me a call</p>
+        <p class="text-[#D1D5DB]">+1 (647) 741-2890</p>
+        <p class="text-gray-400 text-sm">I'm available Monday to Friday, 9am to 5pm.</p>
+      </div>
+
+      <a href="https://www.linkedin.com/in/amirreza-nezami" target="_blank" class="inline-block mt-2 text-[#FE4D00] font-medium hover:underline">
+        💼 Connect on LinkedIn
+      </a>
+
+      <p class="mt-8 text-lg font-semibold text-white">Let’s make something great together! 🚀</p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="flex justify-center md:justify-end">
+      <img src="./assets/images/pic/Amirreza Nezami.jpeg" alt="Amirreza Nezami" class="w-72 h-auto rounded-2xl shadow-lg object-cover">
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>

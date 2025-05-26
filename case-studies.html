@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amirreza Nezami – UX Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Saira+Semi+Condensed:wght@400;700&display=swap');
+      body {
+        font-family: 'Bai Jamjuree', sans-serif;
+        background-color: #ffffff;
+      }
+      h1, h2, h3 {
+        font-family: 'Saira Semi Condensed', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="text-[#121212] bg-white relative overflow-x-hidden">
+
+
+
+
+
+
+
+
+
+
+<!-- ✅ Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
+
+    <!-- Logo -->
+    <div class="text-lg font-semibold text-[#FE4D00]">Amirreza Nezami– CaseStudy</div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-10 text-sm text-gray-800 font-medium">
+    <a href="index.html#home" class="hover:text-[#FE4D00] transition">Home</a>
+    <a href="/portfolio.html" class="hover:text-[#FE4D00] transition">Portfolio</a>
+    <a href="/experience.html" class="hover:text-[#FE4D00] transition">Experiences</a>
+    <a href="#contact" class="hover:text-[#FE4D00] transition">Contact</a>
+    </nav>
+
+    <!-- Menu Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-[#FE4D00] focus:outline-none z-50 relative">
+      <!-- Hamburger Icon -->
+      <svg id="menu-icon" class="w-6 h-6 block" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+
+      <!-- X Icon -->
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu"
+    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden flex flex-col bg-white/90 backdrop-blur-md px-6 py-0 space-y-4 text-gray-800 text-base font-medium shadow-md">
+    <a href="index.html#home" class="hover:text-[#FE4D00] transition">Home</a>
+    <a href="/portfolio.html" class="hover:text-[#FE4D00] transition">Portfolio</a>
+    <a href="/experience.html" class="hover:text-[#FE4D00] transition">Experiences</a>
+    <a href="#contact" class="hover:text-[#FE4D00] transition">Contact</a>
+  </div>
+</header>
+
+
+<!-- ✅ JavaScript for Mobile Menu -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  let isMenuOpen = false;
+
+  function toggleMenu(state) {
+    isMenuOpen = state !== undefined ? state : !isMenuOpen;
+
+    if (isMenuOpen) {
+      mobileMenu.classList.remove('max-h-0', 'py-0');
+      mobileMenu.classList.add('max-h-[300px]', 'py-4');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.remove('max-h-[300px]', 'py-4');
+      mobileMenu.classList.add('max-h-0', 'py-0');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    const isClickInside = toggleBtn.contains(event.target) || mobileMenu.contains(event.target);
+    if (!isClickInside && isMenuOpen) {
+      toggleMenu(false);
+    }
+  });
+
+  // Close menu when clicking on a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+  <!-- Case Studies Section -->
+  <section class="px-6 py-20 md:px-12 bg-gradient-to-b from-[#E0F0FF] to-white">
+    <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">
+      My Case Studies
+    </h2>
+
+
+    <!-- Image Section -->
+    <div class="flex justify-center md:justify-end">
+      <img src="./assets/images/CaseStudy/friends 1.png" alt="friends" class="w-auto h-auto  object-cover">
+    </div>
+
+
+    <div class="grid gap-20 md:grid-cols-2 ">
+
+
+
+
+
+      <!-- Case Study Card 1 -->
+      <a href="./assets/images/CaseStudy/Amirreza Nezami - Case Study (CRA Sign-in - UX Copywriting Redesign).pdf" target="_blank" class="group bg-[#F5F6FA] rounded-2xl overflow-hidden shadow hover:shadow-lg transition hover:-translate-y-1 border border-transparent hover:border-[#FE4D00]">
+        <img src="./assets/images/CaseStudy/Case Study (CRA Sign-in - UX Copywriting Redesign).jpg" alt="FreyFunds" class="w-full h-80 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold text-lg group-hover:text-[#FE4D00]">CRA Sign-in</h3>
+          <p class="text-sm text-gray-600 mt-1">Redesigned the CRA sign-in experience with a UX copywriting lens—fixing vague CTAs, unclear login options, and robotic error messages. Focused on clarity, trust, and accessibility for all users, including newcomers to Canada.</p>
+        </div>
+      </a>
+
+      <!-- Case Study Card 2 -->
+      <a href="./assets/images/CaseStudy/Amirreza Nezami - UX Copy Case Study – Simplii Login Page.pdf" target="_blank" class="group bg-[#F5F6FA] rounded-2xl overflow-hidden shadow hover:shadow-lg transition hover:-translate-y-1 border border-transparent hover:border-[#FE4D00]">
+        <img src="./assets/images/CaseStudy/UX Copy Case Study – Simplii Login Page.jpg" alt="Investor's Edge" class="w-full h-80 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold text-lg group-hover:text-[#FE4D00]">Simplii Login Page</h3>
+          <p class="text-sm text-gray-600 mt-1">A focused UX copywriting case study analyzing the Simplii Financial login page. I identified key clarity and usability issues, rewrote critical messages, and redesigned the interface for a friendlier, more accessible sign-in experience.</p>
+        </div>
+      </a>
+
+      <!-- Case Study Card 3 -->
+      <a href="./assets/images/CaseStudy/Amirreza Nezami - Design System for FreyFunds.pdf" target="_blank" class="group bg-[#F5F6FA] rounded-2xl overflow-hidden shadow hover:shadow-lg transition hover:-translate-y-1 border border-transparent hover:border-[#FE4D00]">
+        <img src="./assets/images/CaseStudy/Design System for FreyFunds.jpg" alt="Project 3" class="w-full h-80 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold text-lg group-hover:text-[#FE4D00]">Design System</h3>
+          <p class="text-sm text-gray-600 mt-1">Design System for a personal finance app designed to help users manage their budget effectively.</p>
+        </div>
+      </a>
+
+      <!-- Case Study Card 4 -->
+      <a href="./assets/images/CaseStudy/Amirreza Nezami - Case study - FreyFunds.pdf" target="_blank" class="group bg-[#F5F6FA] rounded-2xl overflow-hidden shadow hover:shadow-lg transition hover:-translate-y-1 border border-transparent hover:border-[#FE4D00]">
+        <img src="./assets/images/CaseStudy/FreyFunds.jpg" alt="Project 3" class="w-full h-80 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold text-lg group-hover:text-[#FE4D00]">FreyFunds</h3>
+          <p class="text-sm text-gray-600 mt-1">A personal finance app designed to help users manage their budget effectively.</p>
+        </div>
+      </a>
+    
+      <!-- Case Study Card 5 -->
+      <a href="./assets/images/CaseStudy/Amirreza Nezami - Case study - Investor’s Edge UX Redesign.pdf" target="_blank" class="group bg-[#F5F6FA] rounded-2xl overflow-hidden shadow hover:shadow-lg transition hover:-translate-y-1 border border-transparent hover:border-[#FE4D00]">
+        <img src="./assets/images/CaseStudy/Investor’s Edge.jpg" alt="Project 3" class="w-full h-80 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold text-lg group-hover:text-[#FE4D00]">Investor’s Edge</h3>
+          <p class="text-sm text-gray-600 mt-1">A UX redesign project for a stock trading platform.</p>
+        </div>
+      </a>
+    
+      <!-- Case Study Card 6 -->
+      <a href="./assets/images/CaseStudy/Amirreza Nezami - Case study - Florist.pdf" target="_blank" class="group bg-[#F5F6FA] rounded-2xl overflow-hidden shadow hover:shadow-lg transition hover:-translate-y-1 border border-transparent hover:border-[#FE4D00]">
+        <img src="./assets/images/CaseStudy/Florist.jpg" alt="Project 3" class="w-full h-80 object-cover" />
+        <div class="p-4">
+          <h3 class="font-semibold text-lg group-hover:text-[#FE4D00]">Florist</h3>
+          <p class="text-sm text-gray-600 mt-1">A flower shop management app that enhances customer experience.</p>
+        </div>
+      </a>
+    
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+  <footer id="contact" class="bg-black px-6 md:px-12 py-16 text-[#F5F6FA]">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Text Section -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4 text-white">Get in touch</h2>
+      <h3 class="text-xl font-semibold mb-2">Amirreza Nezami</h3>
+      <p class="text-[#D1D5DB] mb-4">I'd love to hear from you. Let's chat about your design needs and ideas.</p>
+
+      <div class="mb-4">
+        <p class="text-sm font-medium text-[#E5E7EB] mb-1">📧 Send me an email</p>
+        <p class="text-[#D1D5DB]">amirreza.nezami28@gmail.com</p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-sm font-medium text-[#E5E7EB] mb-1">📞 Give me a call</p>
+        <p class="text-[#D1D5DB]">+1 (647) 741-2890</p>
+        <p class="text-gray-400 text-sm">I'm available Monday to Friday, 9am to 5pm.</p>
+      </div>
+
+      <a href="https://www.linkedin.com/in/amirreza-nezami" target="_blank" class="inline-block mt-2 text-[#FE4D00] font-medium hover:underline">
+        💼 Connect on LinkedIn
+      </a>
+
+      <p class="mt-8 text-lg font-semibold text-white">Let’s make something great together! 🚀</p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="flex justify-center md:justify-end">
+      <img src="./assets/images/pic/Amirreza Nezami.jpeg" alt="Amirreza Nezami" class="w-72 h-auto rounded-2xl shadow-lg object-cover">
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+
+</body>
+</html>

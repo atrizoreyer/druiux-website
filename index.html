@@ -1,765 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Amirreza Nezami</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/layout.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+  <head>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon">
 
-    </head>
-    <body id="page-top">
-
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg text-uppercase fixed-top" id="mainNav">
-            <div class="container">
-                <a class="navbar-brand" href="#page-top" style="display: flex; align-items: center; gap: 20px;">
-                    <img src="assets/img/Amirreza Nezami - LOGO.jpg" alt="Amirreza Nezami's LOGO" style="height: 50px;">
-                    <i class="fas fa-home" style="font-size: 24px;"></i>
-                  </a>
-                <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#My Story">My Story</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#case-study">case study</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#experiences">experiences</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#skills">skills</a></li>
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amirreza Nezami – UX Designer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Saira+Semi+Condensed:wght@400;700&display=swap');
+      body {
+        font-family: 'Bai Jamjuree', sans-serif;
+        background-color: #ffffff;
+      }
+      h1, h2, h3 {
+        font-family: 'Saira Semi Condensed', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="text-[#121212] bg-white relative overflow-x-hidden">
 
 
 
-        <!-- Masthead-->
-        <header>
 
-        <section class="masthead bg-primary text-white text-center" style="position: relative; z-index: 5;">
-            <div class="parallax-background"></div> <!-- پس‌زمینه پارالاکس -->
-            <div class="container d-flex align-items-center flex-column">  
-                <!-- Masthead Avatar Image-->
 
-    <div class="masthead-avatar-container mb-5">
-        <img class="masthead-avatar-original" src="assets/img/amirreza.jpg" alt="Original Avatar" />
-        <img class="masthead-avatar-cartoon" src="assets/img/amirreza's pic AI.jpg" alt="Cartoon Avatar" />
+
+
+
+
+
+<!-- ✅ Navbar -->
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between relative">
+
+    <!-- Logo -->
+    <div class="text-lg font-semibold text-[#FE4D00]">Amirreza Nezami</div>
+
+    <!-- Desktop Menu -->
+    <nav class="hidden md:flex gap-10 text-sm text-gray-800 font-medium">
+      <a href="#home" class="hover:text-[#FE4D00] transition">Home</a>
+      <a href="#portfolio" class="hover:text-[#FE4D00] transition">Portfolio</a>
+      <a href="#story" class="hover:text-[#FE4D00] transition">My Story</a>
+      <a href="#contact" class="hover:text-[#FE4D00] transition">Contact</a>
+    </nav>
+
+    <!-- Menu Toggle Button -->
+    <button id="menu-toggle" class="md:hidden text-[#FE4D00] focus:outline-none z-50 relative">
+      <!-- Hamburger Icon -->
+      <svg id="menu-icon" class="w-6 h-6 block" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+
+      <!-- X Icon -->
+      <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor"
+        viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <div id="mobile-menu"
+    class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out md:hidden flex flex-col bg-white/90 backdrop-blur-md px-6 py-0 space-y-4 text-gray-800 text-base font-medium shadow-md">
+    <a href="#home" class="mobile-link hover:text-[#FE4D00] transition">Home</a>
+    <a href="#portfolio" class="mobile-link hover:text-[#FE4D00] transition">Portfolio</a>
+    <a href="#story" class="mobile-link hover:text-[#FE4D00] transition">My Story</a>
+    <a href="#contact" class="mobile-link hover:text-[#FE4D00] transition">Contact</a>
+  </div>
+</header>
+
+
+<!-- ✅ JavaScript for Mobile Menu -->
+<script>
+  const toggleBtn = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+  const closeIcon = document.getElementById('close-icon');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  let isMenuOpen = false;
+
+  function toggleMenu(state) {
+    isMenuOpen = state !== undefined ? state : !isMenuOpen;
+
+    if (isMenuOpen) {
+      mobileMenu.classList.remove('max-h-0', 'py-0');
+      mobileMenu.classList.add('max-h-[300px]', 'py-4');
+      menuIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+    } else {
+      mobileMenu.classList.remove('max-h-[300px]', 'py-4');
+      mobileMenu.classList.add('max-h-0', 'py-0');
+      menuIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    toggleMenu();
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (event) => {
+    const isClickInside = toggleBtn.contains(event.target) || mobileMenu.contains(event.target);
+    if (!isClickInside && isMenuOpen) {
+      toggleMenu(false);
+    }
+  });
+
+  // Close menu when clicking on a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => toggleMenu(false));
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Hero Section -->
+<section id="home" class="relative z-20 px-6 py-24 md:px-12 lg:px-24 max-w-7xl mx-auto text-left overflow-hidden">
+
+  <!-- Background Image Positioned to Right with Gradient -->
+  <div class="absolute inset-0 z-0 flex justify-end md:pr-6 md:pr-20">
+    <div class="relative w-full md:w-[55%] h-full background-image">
+      <img
+        src="./assets/images/desktop.avif"
+        alt="background visual"
+        class="w-full h-full object-cover brightness-90 md:rounded-2xl "
+      />
+      <!-- Gradient from LEFT to RIGHT now -->
+      <div class="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-transparent"></div>
     </div>
-    <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">
-                    <div class="masthead-heading-container">
-                        I'm
-                        <br />
-                        Amirreza Nezami
-                        <br />
-                    </div>
-                    
-                </h1>
-                <!-- Icon Divider-->
-                <!--<div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>-->
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">
-                    <div class="masthead-heading-containerr">
-                    User-Centered UX Designer | Product Designer
-                    <br />
-                    Simplifying Experiences with Usability & Accessibility
-                    </div>
-                </p>
-            </div>
-        </section>
-        </header>
+  </div>
 
+  <!-- Text Content -->
+  <div class="relative z-10 max-w-2xl">
+    <h1 class="text-4xl md:text-6xl font-bold text-[#121212] leading-tight">
+      Hey, I’m Amirreza <span class="inline-block ml-2 text-3xl md:text-4xl">👋😊</span>
+    </h1>
 
-<!-- Elevator Section -->
-<section class="elevator" style="position: relative; z-index: 5;">
-    <div class="elevator-background"></div>
-    <div class="elevator-doors">
-        <img class="door left-door" src="assets/img/door left.jpg" alt="Left Door">
-        <img class="door right-door" src="assets/img/door right.jpg" alt="Right Door">
-        <h1 class="elevator-text">Let's go<br>for a<br>Walk and Talk!</h1>
-    </div>
-</section>
-
-
-
-<div class="cloud" style="position: relative; z-index: 5;">
-</div>
-
-
-
-<!-- Walk Section -->
-<section class="walk-section" id="My Story">
-    <div class="walk-image-container">
-      <img src="assets/img/park CN.jpg" alt="Night View" class="walk-image">
-    </div>
-    <div class="walk-text-container">
-        <p class="walk-text intro-text">Here’s where my story begins.</p>
-        <p class="walk-text">Design has always been a significant part of my life, deeply influenced by my family. My grandfather, a renowned designer in interior design and fashion, inspired me to explore the world of design and build my own path in this field. His legacy continues to guide my work, even today.</p>
-        <p class="walk-text">My uncle, a talented painter and industrial designer, further shaped my journey. He encouraged me to pursue Industrial Engineering with a focus on system planning and analysis—a decision that equipped me with strong problem-solving abilities and an analytical mindset. These skills have been instrumental in understanding user needs and translating them into impactful designs.</p>
-        <p class="walk-text">Through collaboration with my partner, a skilled programmer, I also acquired valuable programming knowledge, which has significantly enhanced my UX design capabilities. Together, we tackled complex projects, and I gained firsthand experience in creating user-centric solutions.</p>
-        <p class="walk-text">In my previous roles, I contributed to projects that improved user engagement by 30% and streamlined workflows, reducing processing time by 20%. These experiences have helped me develop a strong foundation in crafting intuitive and efficient designs.</p>
-        <p class="walk-text"> <br/>I’m excited about the opportunity to bring my skills and experiences to a new team, where I can combine my passion for design with my technical expertise to create exceptional user experiences. Let’s take a look at some of my work to see how I can make a difference.<br/><br/></p>
-       <!-- <p class="walk-text"> <br/> <br/> <br/> <br/> </p> -->
-
-    </div>
-</section>
-
-  
-  
-
-  
-
-
-
-
-
-
-
-
-        
-
-
-        <!-- Portfolio Section-->
-        <section class="page-section portfolio masthead-portfolio" id="portfolio"  style="position: relative; z-index: 3; padding-top: 10rem; padding-bottom: 10rem;">
-            <div class="container">
-                
-                <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase mb-0" style="color: yellow";><br />Portfolio<br /><br /><br /></h2>
-                
-                <!-- Icon Divider-->
-                <!--<div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>-->
-                
-                <!-- Portfolio Grid Items-->
-                <div class="row justify-content-center" style=" padding-top: 5rem;">
-                    
-                    <!-- Portfolio Item 1-->
-                    <div class="col-12 col-md-6 col-lg-6 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-info-circle fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/FreyFunds4.jpg" alt="FreyFunds" />
-                        </div>
-                    </div>
-                    
-                    <!-- Portfolio Item 2-->
-                    <div class="col-12 col-md-6 col-lg-6 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-info-circle fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/Florist 1.jpg" alt="Florist" />
-                        </div>
-                    </div>
-                   
-                    <!-- Portfolio Item 3-->
-                    <div class="col-12 col-md-6 col-lg-6 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-info-circle fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/game.jpg" alt="..." />
-                        </div>
-                    </div>
-                   
-                    <!-- Portfolio Item 4-->
-                    <div class="col-12 col-md-6 col-lg-6 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal4">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-info-circle fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/music2.jpg" alt="..." />
-                        </div>
-                    </div>
-                    
-                    <!-- Portfolio Item 5-->
-                    <div class="col-12 col-md-6 col-lg-6 mb-5">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal5">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-info-circle fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/Vénoir 001.jpg" alt="..." />
-                        </div>
-                    </div>
-                    
-
-                    
-                    <!-- Portfolio Item 6-->
-                    <div class="col-12 col-md-6 col-lg-6 mb-5 mb-lg-0">
-                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal6">
-                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
-                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-info-circle fa-3x"></i></div>
-                            </div>
-                            <img class="img-fluid" src="assets/img/portfolio/Invitation & Tag - Vénoir.jpg" alt="..." />
-                        </div>
-                    </div>
-
-
-
-                </div>
-            </div>
-        </section>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-<!-- Case Study Section -->
-<section class="case-study-slider" id="case-study" style="z-index: 3;">
-    <h2 class="page-section-heading text-center text-uppercase mb-0" style="color: yellow; padding-bottom: 80px; font-size: 3rem;">
-        <br /><br /><br />Case Study<br /><br /><br />
+    <h2 class="text-2xl md:text-3xl text-gray-800 mt-6 font-medium">
+      a UX Designer building accessible, user-friendly experiences
     </h2>
-    <button class="slider-btn left-btn">&#10094;</button>
-    <div class="slider-container">
-        <div class="slider">
 
-                                    <!-- Case Study (CRA Sign-in - UX Copywriting Redesign) -->
-                                    <div class="case-study">
-                                        <img src="assets/img/CaseStudy/Case Study (CRA Sign-in - UX Copywriting Redesign).jpg" alt="Case Study (CRA Sign-in - UX Copywriting Redesign)">
-                                        <div class="case-content">
-                                            <h3>CRA Sign-in</h3>
-                                            <p class="case-description">Redesigned the CRA sign-in experience with a UX copywriting lens—fixing vague CTAs, unclear login options, and robotic error messages. Focused on clarity, trust, and accessibility for all users, including newcomers to Canada.</p>
-                                        </div>
-                                        <p class="file-size">1.67 MB</p>
-                                        <a href="assets/img/CaseStudy/Amirreza Nezami - Case Study (CRA Sign-in - UX Copywriting Redesign).pdf" target="_blank" class="view-more">View PDF</a>
-                                        
+    <p class="mt-6 text-gray-700 text-base leading-relaxed">
+      Focused on solving real user problems through clean design systems and thoughtful interactions.
+      <br />
+      Currently looking for a full-time UX Design role.
+    </p>
 
-
-
-                                    </div>
-                                    <!-- Case Study (UX Copy Case Study – Simplii Login Page) -->
-                                    <div class="case-study">
-                                        <img src="assets/img/CaseStudy/UX Copy Case Study – Simplii Login Page.jpg" alt="UX Copy Case Study – Simplii Login Page">
-                                        <div class="case-content">
-                                            <h3>Simplii Login Page</h3>
-                                            <p class="case-description">A focused UX copywriting case study analyzing the Simplii Financial login page. I identified key clarity and usability issues, rewrote critical messages, and redesigned the interface for a friendlier, more accessible sign-in experience.</p>
-                                        </div>
-                                        <p class="file-size">3.17 MB</p>
-                                        <a href="assets/img/CaseStudy/Amirreza Nezami - UX Copy Case Study – Simplii Login Page.pdf" target="_blank" class="view-more">View PDF</a>
-                                        
-                                    </div>
-
-
-                        <!-- Design System for FreyFunds -->
-                        <div class="case-study">
-                            <img src="assets/img/CaseStudy/Design System for FreyFunds.jpg" alt="Design System for FreyFunds Case Study">
-                            <div class="case-content">
-                                <h3>Design System</h3>
-                                <p class="case-description">Design System for a personal finance app designed to help users manage their budget effectively.</p>
-                            </div>
-                            <p class="file-size">1.52 MB</p>
-                            <a href="assets/img/CaseStudy/Amirreza Nezami - Design System for FreyFunds.pdf" target="_blank" class="view-more">View PDF</a>
-                            
-                        </div>
-
-
-            <!-- FreyFunds -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/freyfunds.jpg" alt="FreyFunds Case Study">
-                <div class="case-content">
-                    <h3>FreyFunds</h3>
-                    <p class="case-description">A personal finance app designed to help users manage their budget effectively.</p>
-                </div>
-                <p class="file-size">1.29 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - FreyFunds.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-            <!-- Florist -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/florist.jpg" alt="Florist Case Study">
-                <div class="case-content">
-                    <h3>Florist</h3>
-                    <p class="case-description">A flower shop management app that enhances customer experience.</p>
-                </div>
-                <p class="file-size">2.52 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - Florist.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-            <!-- Investor’s Edge -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/Investor’s Edge.jpg" alt="Investor’s Edge Case Study">
-                <div class="case-content">
-                    <h3>Investor’s Edge</h3>
-                    <p class="case-description">A UX redesign project for a stock trading platform.</p>
-                </div>
-                <p class="file-size">3.18 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - Investor’s Edge UX Redesign.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-                                    <!-- Case Study (CRA Sign-in - UX Copywriting Redesign) -->
-                                    <div class="case-study">
-                                        <img src="assets/img/CaseStudy/Case Study (CRA Sign-in - UX Copywriting Redesign).jpg" alt="Case Study (CRA Sign-in - UX Copywriting Redesign)">
-                                        <div class="case-content">
-                                            <h3>CRA Sign-in</h3>
-                                            <p class="case-description">Redesigned the CRA sign-in experience with a UX copywriting lens—fixing vague CTAs, unclear login options, and robotic error messages. Focused on clarity, trust, and accessibility for all users, including newcomers to Canada.</p>
-                                        </div>
-                                        <p class="file-size">1.67 MB</p>
-                                        <a href="assets/img/CaseStudy/Amirreza Nezami - Case Study (CRA Sign-in - UX Copywriting Redesign).pdf" target="_blank" class="view-more">View PDF</a>
-                                        
-
-
-
-                                    </div>
-                                    <!-- Case Study (UX Copy Case Study – Simplii Login Page) -->
-                                    <div class="case-study">
-                                        <img src="assets/img/CaseStudy/UX Copy Case Study – Simplii Login Page.jpg" alt="UX Copy Case Study – Simplii Login Page">
-                                        <div class="case-content">
-                                            <h3>Simplii Login Page</h3>
-                                            <p class="case-description">A focused UX copywriting case study analyzing the Simplii Financial login page. I identified key clarity and usability issues, rewrote critical messages, and redesigned the interface for a friendlier, more accessible sign-in experience.</p>
-                                        </div>
-                                        <p class="file-size">3.17 MB</p>
-                                        <a href="assets/img/CaseStudy/Amirreza Nezami - UX Copy Case Study – Simplii Login Page.pdf" target="_blank" class="view-more">View PDF</a>
-                                        
-                                    </div>
-
-
-                        <!-- Design System for FreyFunds -->
-                        <div class="case-study">
-                            <img src="assets/img/CaseStudy/Design System for FreyFunds.jpg" alt="Design System for FreyFunds Case Study">
-                            <div class="case-content">
-                                <h3>Design System</h3>
-                                <p class="case-description">Design System for a personal finance app designed to help users manage their budget effectively.</p>
-                            </div>
-                            <p class="file-size">1.52 MB</p>
-                            <a href="assets/img/CaseStudy/Amirreza Nezami - Design System for FreyFunds.pdf" target="_blank" class="view-more">View PDF</a>
-                            
-                        </div>
-
-
-            <!-- FreyFunds -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/freyfunds.jpg" alt="FreyFunds Case Study">
-                <div class="case-content">
-                    <h3>FreyFunds</h3>
-                    <p class="case-description">A personal finance app designed to help users manage their budget effectively.</p>
-                </div>
-                <p class="file-size">1.29 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - FreyFunds.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-            <!-- Florist -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/florist.jpg" alt="Florist Case Study">
-                <div class="case-content">
-                    <h3>Florist</h3>
-                    <p class="case-description">A flower shop management app that enhances customer experience.</p>
-                </div>
-                <p class="file-size">2.52 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - Florist.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-            <!-- Investor’s Edge -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/Investor’s Edge.jpg" alt="Investor’s Edge Case Study">
-                <div class="case-content">
-                    <h3>Investor’s Edge</h3>
-                    <p class="case-description">A UX redesign project for a stock trading platform.</p>
-                </div>
-                <p class="file-size">3.18 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - Investor’s Edge UX Redesign.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-                                    <!-- Case Study (CRA Sign-in - UX Copywriting Redesign) -->
-                                    <div class="case-study">
-                                        <img src="assets/img/CaseStudy/Case Study (CRA Sign-in - UX Copywriting Redesign).jpg" alt="Case Study (CRA Sign-in - UX Copywriting Redesign)">
-                                        <div class="case-content">
-                                            <h3>CRA Sign-in</h3>
-                                            <p class="case-description">Redesigned the CRA sign-in experience with a UX copywriting lens—fixing vague CTAs, unclear login options, and robotic error messages. Focused on clarity, trust, and accessibility for all users, including newcomers to Canada.</p>
-                                        </div>
-                                        <p class="file-size">1.67 MB</p>
-                                        <a href="assets/img/CaseStudy/Amirreza Nezami - Case Study (CRA Sign-in - UX Copywriting Redesign).pdf" target="_blank" class="view-more">View PDF</a>
-                                        
-
-
-
-                                    </div>
-                                    <!-- Case Study (UX Copy Case Study – Simplii Login Page) -->
-                                    <div class="case-study">
-                                        <img src="assets/img/CaseStudy/UX Copy Case Study – Simplii Login Page.jpg" alt="UX Copy Case Study – Simplii Login Page">
-                                        <div class="case-content">
-                                            <h3>Simplii Login Page</h3>
-                                            <p class="case-description">A focused UX copywriting case study analyzing the Simplii Financial login page. I identified key clarity and usability issues, rewrote critical messages, and redesigned the interface for a friendlier, more accessible sign-in experience.</p>
-                                        </div>
-                                        <p class="file-size">3.17 MB</p>
-                                        <a href="assets/img/CaseStudy/Amirreza Nezami - UX Copy Case Study – Simplii Login Page.pdf" target="_blank" class="view-more">View PDF</a>
-                                        
-                                    </div>
-
-
-                        <!-- Design System for FreyFunds -->
-                        <div class="case-study">
-                            <img src="assets/img/CaseStudy/Design System for FreyFunds.jpg" alt="Design System for FreyFunds Case Study">
-                            <div class="case-content">
-                                <h3>Design System</h3>
-                                <p class="case-description">Design System for a personal finance app designed to help users manage their budget effectively.</p>
-                            </div>
-                            <p class="file-size">1.52 MB</p>
-                            <a href="assets/img/CaseStudy/Amirreza Nezami - Design System for FreyFunds.pdf" target="_blank" class="view-more">View PDF</a>
-                            
-                        </div>
-
-
-            <!-- FreyFunds -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/freyfunds.jpg" alt="FreyFunds Case Study">
-                <div class="case-content">
-                    <h3>FreyFunds</h3>
-                    <p class="case-description">A personal finance app designed to help users manage their budget effectively.</p>
-                </div>
-                <p class="file-size">1.29 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - FreyFunds.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-            <!-- Florist -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/florist.jpg" alt="Florist Case Study">
-                <div class="case-content">
-                    <h3>Florist</h3>
-                    <p class="case-description">A flower shop management app that enhances customer experience.</p>
-                </div>
-                <p class="file-size">2.52 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - Florist.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-            <!-- Investor’s Edge -->
-            <div class="case-study">
-                <img src="assets/img/CaseStudy/Investor’s Edge.jpg" alt="Investor’s Edge Case Study">
-                <div class="case-content">
-                    <h3>Investor’s Edge</h3>
-                    <p class="case-description">A UX redesign project for a stock trading platform.</p>
-                </div>
-                <p class="file-size">3.18 MB</p>
-                <a href="assets/img/CaseStudy/Amirreza Nezami - Case study - Investor’s Edge UX Redesign.pdf" target="_blank" class="view-more">View PDF</a>
-                
-            </div>
-
-
-
-
-
-
-
-
-        </div>
+    <!-- CTA Buttons -->
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a href="/Amirreza_Nezami_Resume.pdf" target="_blank"
+        class="bg-[#FE4D00] text-white px-6 py-2 rounded-xl text-sm hover:opacity-90 transition">
+        Download Resume
+      </a>
+      <a href="#contact"
+        class="border border-[#FE4D00] text-[#FE4D00] px-6 py-2 rounded-xl text-sm hover:bg-[#FE4D00] hover:text-white transition">
+        Contact Me
+      </a>
     </div>
-    <button class="slider-btn right-btn">&#10095;</button>
-</section>
+  </div>
 
-
-        
-
-
-        
-            
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- experiences Section-->
-<section class="page-section portfolio masthead-portfolio"id="experiences" style="position: relative; z-index: 3; padding-top: 1rem; padding-bottom: 10rem;">
-    <div class="experiences-content">
-        <!-- experiences Section Heading-->
-        <h2 class="page-section-heading text-center text-uppercase mb-0" style="color: yellow;"><br /><br /><br />Experiences<br /><br /><br /></h2>
-        
-                <!-- Icon Divider-->
-               <!--<div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>-->
-                
-        <!-- experiences Section Content-->
-
-            <!-- Column for UX Designer -->
-            <div>
-                <p class="lead">
-                    <strong><span style="text-shadow: 2px 2px 5px rgba(255, 255, 0, 0.8); font-size: 1.2em;"><br/><br/>Product Designer – Design Systems (UX/UI Focus)</span></strong><br>
-                    Hami Ofogh Farda (Application and website development)<br>
-                    <span style="color: rgb(234, 155, 245);">Aug 2020 - Sep 2023<br/></span>
-
-                    <ul>
-                        <li>Led the creation of a design system from scratch; boosted design consistency by 40%</li>
-                        <li>Designed and documented 100+ UI components in Figma with accessibility-first mindset (WCAG 2.1 compliant)</li>
-                        <li>Collaborated with devs to align Figma libraries with Storybook codebase — cutting design-to-dev handoff time by 35%</li>
-                        <li>Conducted internal workshops to drive adoption — increased design system usage across teams by 60%</li>
-                        <li>Integrated design tokens for theming and faster UI scalability — enabling rollout of UI updates 2x faster</li>
-                    </ul>
-                </p>
-            </div>
-            <h2 class="page-section-heading text-center text-uppercase mb-0" style="color: yellow;"><br />Other Experiences<br /><br /></h2>
-
-        <div class="row">
-
-            <!-- Column for Project Administrator -->
-            <div class="col-lg-4">
-                <p class="lead">
-                    <strong><span style="text-shadow: 2px 2px 5px rgba(255, 255, 0, 0.8); font-size: 1.2em;"><br/><br/>Project Administrator - IT & Design Projects</span></strong><br>
-                    HSA Project Management Inc.<br>
-                    <span style="color: rgb(234, 155, 245);">Jan 2024-PRESENT<br/></span>
-                    <ul>
-                        <li>Joined HSA to immerse myself in Canadian UX practices and bridge my international experience with local standards — actively contributing to internal tools while sharpening Agile collaboration skills.</li>
-                        <li>Supported product managers and UX leads across internal tool design — growing my grasp of enterprise UX practices and Agile delivery from the inside out.</li>
-                        <li>Contributed to 3+ internal product iterations, resulting in 25% faster internal workflows and improved team alignment by 30%.</li>
-
-                    </ul>
-                </p>
-            </div>
-
-
-
-            <!-- Column for Graphic User Interface Designer -->
-            <div class="col-lg-4">
-                <p class="lead">
-                    <strong><span style="text-shadow: 2px 2px 5px rgba(255, 255, 0, 0.8); font-size: 1.2em;"><br/><br/>Graphic User Interface Designer</span></strong><br>
-                    PixelSense Agency<br>
-                    <span style="color: rgb(234, 155, 245);">Mar 2019 - Mar 2020<br/></span>
-                    <ul>
-                        <li>Delivered consistent visual identities across 15+ websites and digital campaigns</li>
-                        <li>Created reusable UI elements and iconography — reduced repetitive design work by 30%</li>
-                        <li>Conducted UI audits focused on visual consistency and accessibility compliance — improved usability and accessibility across digital assets by 20%</li>
-                        
-
-                    
-                    </ul>
-                </p>
-            </div>
-
-        </div>
-        <!-- experiences Section Button-->
-        <!-- <div class="text-center mt-4">
-            <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                <i class="fas fa-download me-2"></i>
-                Free Download!
-            </a>
-        </div> -->
-    </div>
 </section>
 
 
 
 
-        <!-- Skills Section-->
-        <section class="skills-section" id="skills" style="position: relative; z-index: 3; padding-top: 10rem; padding-bottom: 10rem;">
-            <h2 class="page-section-heading text-center text-uppercase mb-0" style="background-color: rgb(0, 0, 0, 0.2); border-radius: 0.5pc; color: yellow; padding-bottom: 30px;  font-size: 3rem !important;"><br/>My Skills<br/></h2>
-                <!-- Icon Divider-->
-                <!--<div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>-->
-
-            <!-- UX & UI Design -->
-            <div class="skills-category">
-              <h3><br/><br/>UX & Product Strategy</h3>
-
-              <ul>
-                <li>UX Design · UI Design · Product Design</li>
-                <li>Design Systems (Governance, Tokens, Maintenance)</li>
-                <li>Information Architecture · Interaction Design</li>
-                <li>Data-Driven Design · Problem Solving · Strategic Thinking</li>
-
-              </ul>
-
-            </div>
-          
-            <!-- Research & Testing -->
-            <div class="skills-category">
-              <h3>Design Process</h3>
-
-              <ul>
-                <li>Wireframing & Prototyping (Low → High Fidelity)</li>
-                <li>User Research · User Interviews · Usability Testing · A/B Testing</li>
-                <li>Accessibility (WCAG 2.1 Standards)</li>
-               
-              </ul>
-
-            </div>
-          
-            <!-- Development & Design Tools -->
-            <div class="skills-category">
-              <h3>Tools & Technologies</h3>
-
-              <ul>
-                <li>Figma (Auto-layout, Interactive Components, Libraries)</li>
-                <li>Adobe Creative Suite (XD, Photoshop, After Effects, Illustrator)</li>
-                <li>Storybook · Zeplin · Miro · Notion · Jira · Confluence</li>
-                <li>HTML5 · CSS3 · JavaScript (Basic) · Visual Studio Code</li>
-              </ul>
-
-            </div>
-
-
-
-            <!-- Soft Skills & Strategy -->
-             <div class="skills-category">
-                <h3>Soft Skills</h3>
-
-                <ul>
-                    <li>Cross-functional Collaboration · Communication</li>
-                    <li>Time Management · Ownership Mindset</li>
-                    <li>Continuous Learning & Adaptability</li>
-                    
-                </ul>
-
-            </div>
-
-          </section>
-          
-
-
-
-
-                  
-
-          <!-- Thank You Section -->
-          <section class="thank-you-section" style="position: relative; z-index: 3;">
-            <div class="thank-you-content">
-              <h2>You’ve Made My Day by Visiting!</h2>
-              <p>I truly appreciate you taking the time to explore my work. I'm excited about the possibility of connecting and collaborating with you. Looking forward to meeting you soon – whether as a teammate, colleague, or partner!</p>
-              <br/>
-              <p><strong class="last-sentence">
-                Let’s make something great together!
-            </strong></p>
-            </div>
-          </section>
-          
-
-        
-
-
-
-
-        <!-- Contact Section-->
-       <!-- section class="page-section" id="contact">
-            <div class="container">
-                <div class="contact">
-
-                <!-- Contact Section Heading-->
-                <!--h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Contact Me</h2>
-                <!-- Icon Divider-->
-                <!--div class="divider-custom">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- Contact Section Form-->
-                <!--div class="row justify-content-center">
-                    <div class="col-lg-8 col-xl-7">
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- * * SB Forms Contact Form * *-->
-                        <!-- * * * * * * * * * * * * * * *-->
-                        <!-- This form is pre-integrated with SB Forms.-->
-                        <!-- To make this form functional, sign up at-->
-                        <!-- https://startbootstrap.com/solution/contact-forms-->
-                        <!-- to get an API token!-->
-                        <!--form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                            <!-- Name input-->
-                            <!--div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                <label for="name">Full name</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                            </div>
-                            <!-- Email address input-->
-                            <!--div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Email address</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                            </div>
-                            <!-- Phone number input-->
-                            <!--div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                <label for="phone">Phone number</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                            </div>
-                            <!-- Message input-->
-                            <!--div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                            </div>
-                            <!-- Submit success message-->
-                            <!---->
-                            <!-- This is what your users will see when the form-->
-                            <!-- has successfully submitted-->
-                            <!--div class="d-none" id="submitSuccessMessage">
-                                <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                </div>
-                            </div>
-                            <!-- Submit error message-->
-                            <!---->
-                            <!-- This is what your users will see when there is-->
-                            <!-- an error submitting the form-->
-                            <!--div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            <!-- Submit Button-->
-                            <!--button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
 
 
 
@@ -767,444 +187,224 @@
 
 
 
+    <!-- Card Section -->
+<section class="relative z-20 px-6 py-16 md:py-24">
+  <div class="max-w-6xl mx-auto">
+    <h3 class="text-2xl md:text-3xl font-semibold mb-10 text-center text-[#121212]">What I Focus On</h3>
 
+    <div class="grid gap-6 md:grid-cols-2">
+      <!-- Card 1 -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+        <h4 class="text-xl font-semibold text-[#FE4D00] mb-2">UX Design</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Crafting intuitive, user-centered experiences with accessibility and usability in mind.
+        </p>
+      </div>
 
-        <!-- Footer-->
-        <footer class="footer text-center" id="Contact" style="position: relative; z-index: 3;">
-            <div class="container">
-                <div class="row">
+      <!-- Card 2 -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+        <h4 class="text-xl font-semibold text-[#FE4D00] mb-2">Design Systems</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Building scalable, reusable UI components to create consistent user interfaces across platforms.
+        </p>
+      </div>
 
-                    <!-- Footer Location-->
-                    <div >
-                        <h4 class="text-uppercase mb-4" style="background-color: white, 0.7; border-radius: 8px !important;">Location</h4>
-                        <p class="lead mb-0">
-                            Toronto, Canada
-                            <br />
-                            <br />
+            <!-- Card 3 -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+        <h4 class="text-xl font-semibold text-[#FE4D00] mb-2">Digital Content</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+Crafting clear, engaging, and accessible content that supports user flows and strengthens brand voice. 
+I focus on writing that guides, not distracts — because every word counts</p>
+      </div>
 
-                        </p>
-                        <h4>
-                        <p> Amirreza Nezami </p>
-                        <a href="mailto:design.druiux@gmail.com" style="color: darkblue">design.druiux@gmail.com</a>
-                        <br/>
-                        <p><br/> (647) 741-2890 <br/></p>
-                        </h4>
-                        <br/>
-                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/amirreza-nezami">
-                        <i class="fab fa-fw fa-linkedin-in"></i></a>
-                    </div>
-
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white" style="position: relative; z-index: 3;">
-            <div class="container"><small>© 2025 Amirreza Nezami | All Rights Reserved</small></div>
-        </div>
-
-
-
-
-
-
-
-
-
+      <!-- Card 4 -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition">
+        <h4 class="text-xl font-semibold text-[#FE4D00] mb-2">Problem Solving</h4>
+        <p class="text-gray-600 text-sm leading-relaxed">
+          Solving real user problems by blending research, testing, and iteration into elegant solutions.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
 
-        <!-- Portfolio Modals-->
-        <!-- Portfolio Modal 1-->
-        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">FreyFunds</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/FreyFunds 2.jpg" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="text-align: left;">
+<!-- Highlights Section -->
+<section id="portfolio" class="py-20 px-6 md:px-12 bg-[#F5F6FA]">
+  <h2 class="text-3xl md:text-4xl font-bold text-[#121212] mb-12 text-center">
+    Explore My Work
+  </h2>
 
-                                    <strong>FreyFunds</strong> is a personal finance management application designed to help users plan and achieve their financial goals. With an intuitive interface, it simplifies budgeting, expense tracking, and saving for the future.                                    
-                                    </p>
-                                    
-                                    <p class="mb-4" style="text-align: left;"><br/><strong>Key Improvements:</strong></p>
-                                    <li class="mb-4" style="text-align: left;"><strong>UI Standardization & Design System: </strong>Users struggled with inconsistent UI components, leading to confusion. To solve this, I created a <strong>scalable design system</strong>, standardizing UI elements and reducing friction. This improved <strong>design consistency by 40%</strong> and made development <strong>30%</strong> more efficient.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Improved Navigation & Usability: </strong>After <strong>conducting usability tests with 15+ users</strong>, we found that unclear navigation caused frequent errors. By <strong>redesigning the layout and visual hierarchy</strong>, we <strong>reduced user errors by 20%</strong>, based on post-test completion rates.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Better Accessibility & User Engagement: </strong>Users often struggled to find key financial tools. By <strong>enhancing the menu structure and information hierarchy</strong>, I improved discoverability. As a result, user engagement <strong>increased by 35%</strong>, measured through session duration and interaction rates.</li>
+  <div class="grid gap-6 md:grid-cols-3">
+    <!-- Card 1 -->
+    <a href="/case-studies.html" class="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer border border-gray-100 hover:border-[#FE4D00] hover:-translate-y-1">
+      <img src="./assets/images/case.avif" alt="Case Studies" class="w-100 h-100 mb-4 rounded-2xl shadow-lg" />
+      <h3 class="text-xl font-semibold text-[#121212] group-hover:text-[#FE4D00] underline">
+        Case Studies
+      </h3>
+      <p class="text-gray-600 mt-2 text-sm">
+        See how I solve real-world problems through UX design.
+      </p>
+    </a>
 
-                                    
-                                    <p class="mb-4" style="text-align: left;"><br/><strong>Key Features & Benefits:</strong></p>
-                                    <li class="mb-4" style="text-align: left;"><strong>Personalized Financial Dashboards: </strong>Helps users visualize spending, savings, and financial goals in one place.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Intuitive Budgeting Tools: </strong>Simplifies expense tracking and <strong>makes budgeting 40% more efficient</strong> with real-time updates.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Goal Setting and Progress Tracking: </strong>Users set and monitor savings or debt repayment goals with AI-powered insights.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Insights and Recommendations: </strong>AI-driven insights to optimize <strong>spending habits</strong> and provide personalized financial recommendations.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Secure Document Management: </strong>Advanced encryption ensures financial data safety.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>User-Friendly Navigation: </strong>Simple, clear layout designed for ease of use, reducing the learning curve and enhancing user experience.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Cross-Platform Syncing: </strong>Ensures seamless access across devices for better financial control.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Educational Resources: </strong>In-app tutorials and AI-generated tips <strong>help users make smarter financial decisions</strong>.</li>
+    <!-- Card 2 -->
+    <a href="/experience.html" class="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer border border-gray-100 hover:border-[#FE4D00] hover:-translate-y-1">
+      <img src="./assets/images/experience.avif" alt="Work Experience" class="w-100 h-100 mb-4 rounded-2xl shadow-lg" />
+      <h3 class="text-xl font-semibold text-[#121212] group-hover:text-[#FE4D00] underline">
+        Work Experience
+      </h3>
+      <p class="text-gray-600 mt-2 text-sm">
+        A look into my full-time and freelance design journey.
+      </p>
+    </a>
 
-                                    <p class="mb-4" style="text-align: left;"><br/><strong>Want to dive deeper into the full UX process?</strong></p>
-                                    <p class="mb-4" style="text-align: left;"><strong>View Figma Prototype:
-                                        <a href="https://www.figma.com/proto/tIYCZYodUdyn3bZqbE2AeI/FreyFunds?page-id=2%3A2&node-id=586-924&node-type=frame&viewport=302%2C62%2C0.09&t=FOhb3b6TJQ2VndgM-9&scaling=scale-down&content-scaling=fixed&starting-point-node-id=586%3A924&show-proto-sidebar=1" target="_blank" style="color: darkblue">Link
-                                        </a></strong>
-                                    </p>
-                                    <p class="mb-4" style="text-align: left;">
-                                        <strong>Full Case Study (PDF, 1.29 MB):
-                                            <a href="assets/img/Case Study/Amirreza Nezami [FreyFunds] Case Study.pdf" 
-                                               target="_blank" 
-                                               style="color: darkblue;">View PDF</a> 
-                                            | 
-                                            <a href="assets/img/Case Study/Amirreza Nezami [FreyFunds] Case Study.pdf" 
-                                               download="Amirreza Nezami [FreyFunds] Case Study.pdf" 
-                                               style="color: darkblue;">Download</a>
-                                        </strong>
-                                    </p>
-                                    
-                                        <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 2-->
-        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" aria-labelledby="portfolioModal2" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Florist</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/florist.jpg" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="text-align: left;">
-                                    <strong>Florist</strong> is an elegant flower shop application designed to simplify the process of selecting, personalizing, and ordering flowers. Through user research, I identified that customers struggled with complex navigation and unclear customization options, leading to high drop-off rates. To address this, I redesigned the product discovery flow, introduced guided customization features, and optimized checkout usability.
-                                    <br/>
-                                    <br/>
-                                    These improvements enhanced the shopping experience, increasing task efficiency by <strong>40%</strong> and reducing user drop-off rates by <strong>25%</strong>. Additionally, accessibility-focused enhancements—such as clearer UI hierarchy, improved contrast, and better mobile responsiveness—made the platform <strong>35%</strong> more usable for diverse customer groups.                                    </p>
-                                    
-                                    <p class="mb-4" style="text-align: left;"><strong><br/>Key Features</strong></p>
-                                   
-                                    <li class="mb-4" style="text-align: left;"><strong>Personalized Flower Selection: </strong>Browse and customize floral arrangements based on occasions, preferences, and budgets.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Seamless Ordering Process: </strong>Streamlined checkout with multiple payment options, reducing user effort and time.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Elegant User Interface: </strong>A visually appealing design that enhances usability and guides users effortlessly through the app.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Smart Recommendations: </strong>AI-powered suggestions tailored to user preferences for a more personalized shopping experience.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Enhanced Accessibility: </strong>Optimized design for all users, including accessibility features to accommodate diverse needs.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Order Tracking: </strong>Real-time updates on delivery status for a hassle-free experience.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Cross-Platform Compatibility: </strong>Fully responsive design, ensuring seamless performance on mobile and desktop devices.</li>
+    <!-- Card 3 -->
+    <a href="/portfolio.html" class="group bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition cursor-pointer border border-gray-100 hover:border-[#FE4D00] hover:-translate-y-1">
+      <img src="./assets/images/projct.avif" alt="Portfolio" class="w-100 h-100 mb-4 rounded-2xl shadow-lg" />
+      <h3 class="text-xl font-semibold text-[#121212] group-hover:text-[#FE4D00] underline">
+        Portfolio
+      </h3>
+      <p class="text-gray-600 mt-2 text-sm">
+        Selected design projects and experiments.
+      </p>
+    </a>
+  </div>
+</section>
 
-                                    <p class="mb-4" style="text-align: left;">
-                                        <strong>Full Case Study (PDF, 2.52 MB):
-                                            <a href="assets/img/Case Study/Amirreza Nezami - Case study - Florist.pdf" 
-                                               target="_blank" 
-                                               style="color: darkblue;">View PDF</a> 
-                                            | 
-                                            <a href="assets/img/Case Study/Amirreza Nezami - Case study - Florist.pdf" 
-                                               download="Amirreza Nezami - Case study - Florist.pdf" 
-                                               style="color: darkblue;">Download</a>
-                                        </strong>
-                                    </p>
 
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 3-->
-        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">GameHaven</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/game2.jpg" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="text-align: left;">
-                                    <strong>GameHaven</strong> is a dynamic gaming website designed to enhance user engagement through immersive visuals and seamless navigation. Through usability testing, I identified that cluttered layouts and slow load times were causing user frustration. To address this, I streamlined the UI, optimized image assets, and restructured content organization, ensuring a more intuitive browsing experience.
-                                    <br/>
-                                    <br/>
-                                    These improvements increased user interaction by <strong>40%</strong>, reduced navigation errors by <strong>30%</strong>, and optimized loading times, leading to a <strong>25%</strong> rise in user satisfaction. The fully responsive design ensures accessibility across devices, reinforcing my ability to create engaging, user-centric digital experiences.
-                                    </p>
-                                    <p class="mb-4" style="text-align: left;"><strong><br/>Key Features</strong></p>
-                                    <li class="mb-4" style="text-align: left;"><strong>Game Showcase: </strong>Complete information and captivating visuals of the latest and most popular games.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Precise Categorization: </strong>Easy search options based on genre, popularity, and new releases.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Interactive Experience: </strong>Responsive design compatible with various devices, from desktop to mobile.</li>
-                                    
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 4-->
-        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">MelodyAI</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/music1.jpg" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
 
-                                    <p class="mb-4" style="text-align: left;">
-                                    <strong>MelodyAI</strong> is an AI-powered music player designed to enhance the listening experience with personalized recommendations and automated content enrichment. Through user research, I identified key frustrations, including missing album artwork and incomplete metadata, which disrupted the listening flow.
-                                    <br/>
-                                    <br/>
-                                    To solve this, I designed an intuitive interface that automatically fills gaps with high-quality album covers, synced lyrics, and smart playlists based on user behavior. These enhancements led to a <strong>35%</strong> increase in user engagement, a <strong>40%</strong> boost in session duration, and a <strong>25%</strong> reduction in user drop-off rates. The result is a seamless, intelligent music experience that adapts to individual preferences.
-                                    </p>
-                                    <p class="mb-4" style="text-align: left;"><strong><br/>Key Features</strong></p>
-                                    
-                                    <li class="mb-4" style="text-align: left;"><strong>AI-Generated Album Artwork: </strong>Automatically generates album art when missing, ensuring a complete and visually appealing library.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Dynamic Backgrounds: </strong>Creates mood-specific backgrounds that align with the emotion of the song being played.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Real-Time Lyrics Display: </strong>Displays synchronized song lyrics and follows along as the music plays.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Artist Integration: </strong>Provides direct links to the artist's social media profiles for easy connection and updates.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Smart Recommendations: </strong>Recommends songs tailored to the user's listening habits and preferences.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Seamless User Experience: </strong>A sleek, intuitive design ensures smooth navigation and effortless music discovery.</li>
-                                    <li class="mb-4" style="text-align: left;"><strong>Cross-Platform Compatibility: </strong>Optimized for desktop and mobile use, offering a consistent experience across devices.</li>
+<section id="story" class="px-6 md:px-12 py-16 text-center bg-[#F5F6FA]">
+  <h2 class="text-3xl font-bold mb-6">🎬 My Journey into UX Design</h2>
+  <p class="italic text-gray-500 mt-4">"It wasn’t just a career switch — it was a mindset shift." 😊</p>
 
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 5-->
-        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Vénoir</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Vénoir 002.jpg" alt="..." />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="text-align: left;">
-                                        <strong><br/>Vénoir – Luxury Meets Innovation</strong>
-                                        <br/>
-                                        <br/>
-                                        <strong>Vénoir</strong> is a high-end fashion brand that blends timeless elegance with modern innovation, redefining contemporary luxury. Through extensive market research and user insights, I identified key challenges in the online shopping experience—such as lack of personalization and uninspiring product discovery—hindering engagement.
-                                        <br/>
-                                        <br/>
-                                        To address this, I designed a sleek, immersive digital storefront that enhances the shopping journey with curated collections, dynamic visuals, and interactive storytelling. These refinements resulted in a <strong>40%</strong> increase in browsing time, a <strong>30%</strong> improvement in conversion rates, and a <strong>25%</strong> boost in returning customers. The outcome is a sophisticated e-commerce experience that reflects Vénoir’s commitment to exclusivity and refinement.                                        </p>
-                                        <p class="mb-4" style="text-align: left;"><strong><br/>Key Features</strong></p>
-                                        
-                                        <li class="mb-4" style="text-align: left;"><strong>Curated Collections: </strong>Showcases handpicked, seasonal selections tailored for discerning shoppers.</li>
-                                        <li class="mb-4" style="text-align: left;"><strong>Immersive Visuals: </strong>High-resolution imagery and editorial-style layouts elevate product storytelling.</li>
-                                        <li class="mb-4" style="text-align: left;"><strong>Luxury Aesthetic: </strong>A minimal yet bold design ensures an elegant and exclusive brand experience.</li>
-                                        <li class="mb-4" style="text-align: left;"><strong>Seamless Navigation: </strong>Intuitive browsing and a frictionless checkout streamline the shopping process.</li>
-                                        <li class="mb-4" style="text-align: left;"><strong>Cross-Platform Accessibility: </strong>Optimized for mobile and desktop, offering a premium experience on all devices.</li>
-                                        <li class="mb-4" style="text-align: left;"><strong>AI-Powered Personalization: </strong>Smart recommendations and tailored product suggestions enhance user engagement.</li>
+  <p class="text-gray-600 mb-6 max-w-xl mx-auto">
+    From engineering to design — here’s how I found my way into UX. 
+  </p>
+  
+
+  <video controls class="w-full max-w-3xl mx-auto rounded-2xl shadow-lg">
+    <source src="./assets/images/journey.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+
+
+
+
+<section class=" px-6 md:px-12 py-16">
+  <h2 class="text-3xl font-bold text-center mb-4">💬 Nice things people say about me</h2>
+  <p class="text-center italic text-gray-500 mb-12">Okay... maybe a few are AI-generated. But hey — they make good points.</p>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
     
-                                        <p class="mb-4" style="text-align: left;">Vénoir isn’t just fashion—it’s a statement. Explore the future of luxury, where every detail embodies sophistication.</p>
-                                    
-                                        <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Portfolio Modal 6-->
-        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Invitation & Tag - Vénoir</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Vénoir Tag1.jpg" alt="Vénoir Tag" />
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Vénoir Tag2.jpg" alt="Vénoir Tag" />
-                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/Vénoir - Invitation.jpg" alt="Vénoir - Invitation" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="text-align: left;">
+    <div class="bg-white p-6 rounded-2xl shadow text-center">
+      <img src="./assets/images/pic/Taylor Smith.avif" alt="Taylor Smith" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+      <p class="text-gray-700 italic text-sm">"Working with Amirreza feels like research and design finally speak the same language. He gets users."</p>
+      <p class="text-sm mt-3 font-semibold text-gray-900">— Taylor Smith, UX Researcher</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow text-center">
+      <img src="./assets/images/pic/Jordan Lee.avif" alt="Jordan Lee" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+      <p class="text-gray-700 italic text-sm">"Amirreza’s eye for structure and flow is incredible. His designs don’t just look good — they make sense."</p>
+      <p class="text-sm mt-3 font-semibold text-gray-900">— Jordan Lee, Visual Designer</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow text-center">
+      <img src="./assets/images/pic/Hassan Askari.jpeg" alt="Hassan Askari" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+      <p class="text-gray-700 italic text-sm">"Amirreza is a thoughtful UX designer who turns complex ideas into clean, intuitive experiences."</p>
+      <p class="text-sm mt-3 font-semibold text-gray-900">— Hassan Askari, Java Web Developer</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow text-center">
+      <img src="./assets/images/pic/Jamie Taylor.avif" alt="Jamie Taylor" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+      <p class="text-gray-700 italic text-sm">"Deadlines? Cross-team chaos? No problem. Amirreza brings clarity and calm like it’s his superpower."</p>
+      <p class="text-sm mt-3 font-semibold text-gray-900">— Jamie Taylor, Project Manager</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow text-center">
+      <img src="./assets/images/pic/Morgan Davis.avif" alt="Morgan Davis" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+      <p class="text-gray-700 italic text-sm">"He’s the kind of designer devs love — clean files, clear logic, no guesswork."</p>
+      <p class="text-sm mt-3 font-semibold text-gray-900">— Morgan Davis, UI Developer</p>
+    </div>
+
+    <div class="bg-white p-6 rounded-2xl shadow text-center">
+      <img src="./assets/images/pic/Cameron White.avif" alt="Cameron White" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+      <p class="text-gray-700 italic text-sm">"What I love about Amirreza is how he ties user needs to business goals. That’s rare."</p>
+      <p class="text-sm mt-3 font-semibold text-gray-900">— Cameron White, Product Manager</p>
+    </div>
+
+  </div>
+</section>
 
 
-                                        <strong><br/>Vénoir – Design Elevated to Perfection</strong>
-                                        <br/>
-                                        <br/>
-                                        At Vénoir, luxury extends beyond fashion—it’s embedded in every meticulously designed element, from our <strong>exclusive garment tags</strong> to our <strong>elegant event invitations</strong>. By blending <strong>product design, premium printing techniques, and brand storytelling,</strong> we create <strong>a seamless luxury experience</strong> that captivates at every touchpoint.
-                                        <br/>
-                                        <br/>
-                                        Through <strong>careful material selection, precision printing, and refined aesthetics,</strong> our tags and invitations embody the same exclusivity and innovation that define Vénoir. Every detail is intentional, ensuring that each interaction—whether unboxing a purchase or receiving an event invitation—feels like a step into the world of timeless elegance.
-                                        
-                                        <p class="mb-4" style="text-align: left;"><strong><br/>Signature Design Elements</strong></p>
-
-                                        <li class="mb-4" style="text-align: left;"><strong>Golden Triangle Emblem: </strong>More than a symbol, it’s an icon of <strong>power and prestige</strong>. The moment you see it, there’s only one name that comes to mind: <strong>Vénoir</strong>.</li>
-                                        <li class="mb-4" style="text-align: left;"><strong>Luxury Printing & Finishes: </strong>High-end materials, embossed textures, and metallic gold accents deliver <strong>a tactile experience of sophistication</strong>.</li>
-                                        <li class="mb-4" style="text-align: left;"><strong>Tailored Invitations: </strong>Every invitation is <strong>an extension of the brand’s identity</strong>, designed to be <strong>as exclusive as the event itself</strong>.</li>
-                                        <li class="mb-4" style="text-align: left;"><strong>Refined Garment Tags: </strong>Designed not just for branding but as <strong>a collector’s piece</strong>, reflecting <strong>the craftsmanship behind every Vénoir creation</strong>.</li>
-    
-                                        <p class="mb-4" style="text-align: left;">At Vénoir, design isn’t just about aesthetics—it’s about creating an experience that lingers. Every detail, every texture, and every <strong>golden triangle</strong> speaks to a brand that defines modern luxury.</p>
-                                                                                                   
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Portfolio Modal 7-->
-        <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" aria-labelledby="portfolioModal7" aria-hidden="true">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                    <div class="modal-body text-center pb-5">
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-8">
-                                    <!-- Portfolio Modal - Title-->
-                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Investor’s Edge UX Redesign<br/>(Personal Case Study)</h2>
-                                    <!-- Icon Divider-->
-                                    <div class="divider-custom">
-                                        <div class="divider-custom-line"></div>
-                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                                        <div class="divider-custom-line"></div>
-                                    </div>
-                                    <!-- Portfolio Modal - Image-->
-                                    <img class="img-fluid rounded mb-5" src="assets/img/Case Study/Investor’s Edge UX Redesign - Case Study.jpg" alt="Investor’s Edge UX Redesign - Case Study" />
-                                    <!-- Portfolio Modal - Text-->
-                                    <p class="mb-4" style="text-align: left;">
 
 
-                                        <strong><br/>Investor’s Edge UX Redesign – Self-Directed Investing UX</strong>
-                                        <br/>
-                                        <br/>
-                                        As part of a self-directed investing UX case study, I analyzed key UX challenges in online brokerage platforms and redesigned a more intuitive, accessible, and data-driven experience for investors.
-                                        
-                                        <p class="mb-4" style="text-align: left;"><strong><br/>Key Features</strong></p>
 
-                                        <li class="mb-4" style="text-align: left;">Competitive Analysis & Research: Conducted in-depth research on leading investing platforms to identify user pain points and areas of improvement.</li>
-                                        <li class="mb-4" style="text-align: left;">UX Redesign & Accessibility: Designed low-to-high fidelity wireframes in Figma, improving navigation, trade execution, and portfolio management for self-directed investors.</li>
-                                        <li class="mb-4" style="text-align: left;">Usability Testing & Impact: Ensured WCAG compliance and tested design solutions with users, leading to a 30% increase in task completion rates.</li>
-                                        <li class="mb-4" style="text-align: left;">Interactive Prototype: Developed a clickable prototype showcasing key design improvements for a more streamlined trading experience.</li>
-                                        <p>🚀 This project allowed me to apply my expertise in FinTech UX and accessibility to improve self-directed investing experiences.</p>
-                                                                                                   
-                                    <button class="btn btn-primary" data-bs-dismiss="modal">
-                                        <i class="fas fa-xmark fa-fw"></i>
-                                        Close
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js" defer></script>
-        <!-- script src="js/scripts.js"></script -->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-        <script>
-            window.addEventListener('scroll', () => {
-              const navbar = document.querySelector('#mainNav');
-              if (window.scrollY > 100) {
-                navbar.classList.add('navbar-shrink');
-              } else {
-                navbar.classList.remove('navbar-shrink');
-              }
-            });
-          </script>
-          
-    </body>
+
+
+
+
+
+<footer id="contact" class="bg-black px-6 md:px-12 py-16 text-[#F5F6FA]">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+    <!-- Text Section -->
+    <div>
+      <h2 class="text-3xl font-bold mb-4 text-white">Get in touch</h2>
+      <h3 class="text-xl font-semibold mb-2">Amirreza Nezami</h3>
+      <p class="text-[#D1D5DB] mb-4">I'd love to hear from you. Let's chat about your design needs and ideas.</p>
+
+      <div class="mb-4">
+        <p class="text-sm font-medium text-[#E5E7EB] mb-1">📧 Send me an email</p>
+        <p class="text-[#D1D5DB]">amirreza.nezami28@gmail.com</p>
+      </div>
+
+      <div class="mb-4">
+        <p class="text-sm font-medium text-[#E5E7EB] mb-1">📞 Give me a call</p>
+        <p class="text-[#D1D5DB]">+1 (647) 741-2890</p>
+        <p class="text-gray-400 text-sm">I'm available Monday to Friday, 9am to 5pm.</p>
+      </div>
+
+      <a href="https://www.linkedin.com/in/amirreza-nezami" target="_blank" class="inline-block mt-2 text-[#FE4D00] font-medium hover:underline">
+        💼 Connect on LinkedIn
+      </a>
+
+      <p class="mt-8 text-lg font-semibold text-white">Let’s make something great together! 🚀</p>
+    </div>
+
+    <!-- Image Section -->
+    <div class="flex justify-center md:justify-end">
+      <img src="./assets/images/pic/Amirreza Nezami.jpeg" alt="Amirreza Nezami" class="w-72 h-auto rounded-2xl shadow-lg object-cover">
+    </div>
+
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
 </html>
